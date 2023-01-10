@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Location</title>
+    <style>
+            html,
+            body {
+              height: 100%;
+            }
+            #map {
+              margin: auto;
+              height: 30%;
+              width: 50%;
+              border: solid 2px;
+              margin-top: 2rem;
+              border-radius: 25px;
+            }
+          </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+          function initMap(){
+            const noppe = {lat: 48.1088689,lng: 16.270023}
+            const map = new google.maps.Map(document.getElementById('map'), {
+              zoom: 11,
+              center: noppe
+            });
+            const marker = new google.maps.Marker({
+              position: {lat: 48.1088689,lng: 16.270023},
+              map: map
+            });
+            var address = '<div><b>NOPPE BÄCKEREI</b></div>';
+	          var infowindow = new google.maps.InfoWindow({
+             content: address
+            });
+            marker.addListener('mouseover', function() {
+            infowindow.open(map, marker);
+            });
+          }
+        </script>
+        <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtjaD-saUZQ47PbxigOg25cvuO6_SuX3M&callback=initMap&v=weekly"
+      defer></script>
+  </body>
+</html>

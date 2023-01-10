@@ -1,0 +1,68 @@
+#navbar{
+    background-color: burlywood;
+    height: 3rem;
+    margin-top: 3rem;
+    border-radius: 25px;
+    padding: 1rem;
+    border-top: solid 2px;
+    border-bottom: solid 2px; 
+    
+    //links start
+    #links{
+        #flexlinks{
+        display: flex;
+        justify-content: space-between;
+        gap: 40%;
+           
+    .right,.left{
+        display: flex;
+        justify-content: space-between;
+        width: 75%;
+        flex-wrap: wrap;
+        a{
+            padding: 1rem;
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+    }
+    }
+        //logo start
+    .logo{
+        border: solid 10px black;
+        border-radius: 100%;
+        display: block;
+        margin: auto;
+        text-align: center;
+        padding: 2rem;
+        position: relative;
+        width: 80px;
+        height: 80px;
+        top :-7rem;
+        background-color: white;
+        z-index: 1;
+        img{
+        width: 5rem;       
+        }
+    }
+    //logo end
+    
+    }
+}
+.resume{
+    display: block;
+    float: right;
+    margin-right: 1rem;
+    margin-top: 1rem;
+    border-bottom: solid 2px;
+    border-radius: 25px;
+    padding: 0.5rem;
+}
+#title{
+    font-size: 300%;
+    display: block;
+    margin: auto;
+    text-align: center;
+    margin-top: 5rem;
+    border-bottom: solid;
+}
