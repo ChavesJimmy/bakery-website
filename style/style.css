@@ -9,14 +9,13 @@
 }
 #navbar #links #flexlinks {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   gap: 40%;
 }
 #navbar #links #flexlinks .right, #navbar #links #flexlinks .left {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   width: 75%;
-  flex-wrap: wrap;
 }
 #navbar #links #flexlinks .right a, #navbar #links #flexlinks .left a {
   padding: 1rem;
@@ -25,21 +24,24 @@
   font-weight: bold;
 }
 #navbar #links .logo {
-  border: solid 10px black;
+  border: solid 5px black;
   border-radius: 100%;
   display: block;
   margin: auto;
   text-align: center;
   padding: 2rem;
   position: relative;
-  width: 80px;
-  height: 80px;
-  top: -7rem;
+  width: 7%;
+  height: 7%;
+  top: -6em;
   background-color: white;
   z-index: 1;
 }
 #navbar #links .logo img {
-  width: 5rem;
+  width: 100%;
+  display: block;
+  margin: auto;
+  text-align: center;
 }
 
 .resume {
@@ -57,7 +59,7 @@
   display: block;
   margin: auto;
   text-align: center;
-  margin-top: 5rem;
+  margin-top: 6rem;
   border-bottom: solid;
 }
 
@@ -292,13 +294,37 @@ h1, h4 {
 }
 
 #menu {
-  border-bottom: solid 2px;
-}
-#menu nav {
+  border-bottom: solid 3px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
-#menu nav a {
+#menu a {
   text-decoration: none;
+  padding: 0.5rem;
   color: black;
+  font-weight: bold;
+}
+
+.card {
+  display: flex;
+  margin: 2rem;
+  border: solid 2px;
+  border-radius: 25px;
+  padding: 1rem;
+}
+.card .img {
+  width: 40%;
+}
+.card .img img {
+  width: 100%;
+  border-radius: 25px;
+  transition: 1s;
+}
+.card .img img:hover {
+  transform: translateX(17%);
+  width: 200%;
+}
+.card .description {
+  text-align: center;
+  margin: auto;
 }/*# sourceMappingURL=style.css.map */
