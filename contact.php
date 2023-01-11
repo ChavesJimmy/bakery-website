@@ -10,7 +10,7 @@
 <body>
     <?php require_once './components/navbar.php' ?>  
     <div class="path">
-        <a href="">🏠 Startseite</a>><a href="">contact</a>
+        <a href="index.php">🏠 Startseite</a>><a href="contact.php">contact</a>
     </div>
     <h1>How to contact us?</h1>
     <h4>Our address</h4>

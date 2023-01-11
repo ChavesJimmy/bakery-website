@@ -9,6 +9,7 @@
 </head>
 <body>
     <?php require_once 'components/navbar.php' ?>
+   
     <div id="menu">
             <a href="#brot">Brot</a>
             <a href="#viennoiserie">Viennoiserie</a>
@@ -16,7 +17,11 @@
             <a href="#geback">Gebäck</a>
             <a href="#pikant">Pikant</a>
             <a href="#divers">Divers</a>
-</div>
+</div> 
+
+<div class="path">
+        <a href="index.php">🏠 Startseite</a> > <a href="products.php">produkte</a>
+    </div>
 <div id="container">
     <div id="brot">
         <h3>Unser Brot</h3>

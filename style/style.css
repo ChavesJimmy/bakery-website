@@ -327,4 +327,74 @@ h1, h4 {
 .card .description {
   text-align: center;
   margin: auto;
+}
+
+#history {
+  padding: 2rem;
+  margin: auto;
+  width: 80%;
+}
+
+.uberuns {
+  display: flex;
+  margin-bottom: 2rem;
+  border: solid 2px;
+  padding: 2rem;
+  justify-content: space-between;
+  text-align: center;
+  border-radius: 25px;
+}
+.uberuns .texts {
+  text-align: center;
+  margin: auto;
+  width: 60%;
+}
+.uberuns .picture {
+  width: 35%;
+}
+.uberuns .picture img {
+  width: 100%;
+}
+
+#korb {
+  border: solid 2px;
+  border-radius: 25px;
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  width: 80%;
+  margin: auto;
+  margin-top: 2rem;
+}
+#korb .bill {
+  background-color: white;
+  width: 25%;
+  height: 200px;
+  border: solid 2px;
+  border-radius: 25px;
+  padding: 0.5rem;
+  margin: auto;
+  text-align: center;
+}
+#korb .einkauf {
+  width: 65%;
+}
+
+#payment {
+  border: solid 2px;
+  border-radius: 25px;
+  justify-content: space-between;
+  padding: 2rem;
+  width: 80%;
+  margin: auto;
+  margin-top: 2rem;
+}
+#payment form {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+#payment form input, #payment form select, #payment form button {
+  width: 25%;
+  margin: auto;
 }/*# sourceMappingURL=style.css.map */
