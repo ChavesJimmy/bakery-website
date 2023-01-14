@@ -1,0 +1,21 @@
+.newspaper,.clients{
+    border: solid 2px;
+    border-radius: 25px;
+    margin: 2rem;
+    padding: 1rem;
+}
+.clients{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+.clientreview{
+    width: 400px;
+    border: solid 2px;
+    margin: auto;
+    border-radius: 25px;
+    background-color: whitesmoke;
+    font-weight: bold;
+    text-align: center;
+    padding: 1rem;
+}

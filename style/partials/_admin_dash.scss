@@ -1,0 +1,48 @@
+body{
+.welcome{
+    text-align: center;
+    display: block;
+    margin: auto;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+#actions{
+    display :flex;
+    padding: 2rem;
+    flex-wrap: wrap;
+    gap :25px;
+    a{
+        text-decoration: none;        
+        margin: auto;
+
+        div{
+        width: 500px;
+        height: 150px;
+        border: solid 2px ;
+        border-radius: 25px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 200%;
+        color: black;
+        box-shadow: burlywood 2px 2px 10px 5px;
+    
+        }
+    }
+    .prod{
+        background-color: red;
+    }
+    .article{
+        background-color: greenyellow;
+    }
+    .review{
+        background-color: lightseagreen;
+    }
+    .job{
+        background-color: yellow;
+    }
+    .orders{
+        background-color: lightpink;
+    }
+
+}
+}

@@ -1,0 +1,11 @@
+#addarticle{
+    display: block;
+    width: 80%;
+    border: solid 2px;
+
+    form{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+}

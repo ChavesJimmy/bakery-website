@@ -23,11 +23,25 @@
             text-decoration: none;
             color: black;
             font-weight: bold;
+            transition: 0.5s;
+        }
+        a:hover{
+            border-top :solid 3px;
+            border-bottom :solid 3px;
+            border-radius: 15%;
+            padding: 0.5rem;
+            font-size: 110%;
+            width: 100%;
+            padding-bottom: 0px;
+            text-shadow: white 1px 1px 5px;
+            width: 70px;
+            text-align: center;
+
         }
     }
     }
         //logo start
-    .logo{
+    .logo,.logoadmin{
         border: solid 5px black;
         border-radius: 100%;
         display: block;
@@ -40,13 +54,18 @@
         top : -6em;
         background-color: white;
         z-index: 1;
+        transition: 1s;
         img{
         width: 100%; 
         display: block;
         margin: auto;
         text-align: center;      
         }
-    }
+       
+    } .logo:hover{
+            transform: scale(1.2);
+        box-shadow: black 5px 5px 15px 5px;
+        }
     //logo end
     
     }
@@ -65,6 +84,6 @@
     display: block;
     margin: auto;
     text-align: center;
-    margin-top: 6rem;
+    margin-top: 7rem;
     border-bottom: solid;
 }
