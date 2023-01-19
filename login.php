@@ -13,21 +13,21 @@ if (isset($_SESSION['ADMIN'])) {
 
 
 $error = false;
-$admin_name = $password = $admin_nameError = $passwordError = '';
+$user_name = $password = $user_nameError = $passwordError = '';
 
 if (isset($_POST['login'])) {
 
-  $admin_name = trim($_POST['admin_name']);
-  $admin_name = strip_tags($admin_name);
-  $admin_name = htmlspecialchars($admin_name);
+  $user_name = trim($_POST['user_name']);
+  $user_name = strip_tags($user_name);
+  $user_name = htmlspecialchars($user_name);
 
   $password = trim($_POST['password']);
   $password = strip_tags($password);
   $password = htmlspecialchars($password);
 
-  if (empty($admin_name)) {
+  if (empty($user_name)) {
     $error = true;
-    $admin_nameError = "Please enter your user name.";
+    $user_nameError = "Please enter your user name.";
   }
 
   if (empty($password)) {
@@ -37,15 +37,19 @@ if (isset($_POST['login'])) {
 
 
   if (!$error) {
-   $sql = "SELECT admin_id, admin_name, password FROM admin WHERE admin_name = '$admin_name'";
+   $sql = "SELECT user_id, user_name, password,session FROM user WHERE user_name = '$user_name'";
     $result = mysqli_query($connect, $sql);
     $row = mysqli_fetch_assoc($result);
     $count = mysqli_num_rows($result);
     if ($count == 1 && $row['password'] == $password) {
-      if ($row['admin_name'] == 'NoppeAdmin') {
-          $_SESSION['ADMIN'] = $row['admin_id'];
+      if ($row['session'] == 'ADMIN') {
+          $_SESSION['ADMIN'] = $row['user_id'];
           header("Location: admin/index_admin.php");
       }
+      else if ($row['session'] == 'USER') {
+        $_SESSION['USER'] = $row['user_id'];
+        header("Location: user/index_user.php");
+    }
   } else {
       $errMSG = "Incorrect Credentials, Try again...";
   }
@@ -108,15 +112,15 @@ mysqli_close($connect);
 <body>
 
   <form class="login" method="post" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" autocomplete="off">
-    <h1 class="login_title">Login Admin</h1>
+    <h1 class="login_title">Login</h1>
     <?php
     if (isset($errMSG)) {
       echo $errMSG;
     }
     ?>
 
-    <input class="form-control" type="text" autocomplete="off" name="admin_name" placeholder="Admin name" value="<?php echo $admin_name; ?>" />
-    <span class="text-danger"><?php echo $admin_nameError; ?></span>
+    <input class="form-control" type="text" autocomplete="off" name="user_name" placeholder="User name" value="<?php echo $user_name; ?>" />
+    <span class="text-danger"><?php echo $user_nameError; ?></span>
 
     <input class="form-control" type="password" name="password" placeholder="Password" maxlength="15"/>
     <span class="text-danger"><?php echo $passwordError; ?></span>

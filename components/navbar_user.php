@@ -3,7 +3,7 @@
         <div id="flexlinks">
         <div class="links left">
             <a href="überuns.php">Über uns</a>
-            <a href="products.php">Produkte</a>
+            <a href="../products.php">Produkte</a>
         </div>
         
         <div class="links right">

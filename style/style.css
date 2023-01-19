@@ -362,26 +362,19 @@ h1, h4 {
 
 .card {
   display: flex;
+  justify-content: space-between;
+  height: 5rem;
   margin: 2rem;
   border: solid 2px;
   border-radius: 25px;
-  padding: 1rem;
+  padding: 0.5rem;
 }
-.card .img {
-  width: 40%;
-}
-.card .img img {
-  width: 100%;
+.card img {
   border-radius: 25px;
-  transition: 1s;
+  transition: 2s;
 }
-.card .img img:hover {
-  transform: translateX(17%);
-  width: 200%;
-}
-.card .description {
-  text-align: center;
-  margin: auto;
+.card h4, .card p {
+  padding: 0.5rem;
 }
 
 #history {

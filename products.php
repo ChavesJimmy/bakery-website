@@ -8,16 +8,11 @@ $tbodybrot = '';
 if (mysqli_num_rows($resultbrot)  > 0) {
     while($rowbrot = mysqli_fetch_array($resultbrot, MYSQLI_ASSOC)){
     $tbodybrot .="<div class='card'>
-    <div class='img'><img src='".$rowbrot['photo']."' alt='".$rowbrot['product_name']."'></div>
-    <div class='description'>
-        <h4>".$rowbrot['product_name']."</h4>
-        <h6>".$rowbrot['weigth']."g</h6>
-        <p>".$rowbrot['description']."</p>
-        <p>".$rowbrot['price']."EUR</p>
-        <input type='number' name='' id=''>
-        <button>+</button><button>-</button>
-        <button><a href=''>add to cart</a></button>
-        </div>
+    <img src='".$rowbrot['photo']."' alt='".$rowbrot['product_name']."'>   
+    <h4>".$rowbrot['product_name']."</h4>
+    <p>".$rowbrot['description']."</p>
+    <p>".$rowbrot['price']."EUR</p>
+        
 </div>";}}
 else{
    $tbodybrot="No Brot available";
@@ -32,7 +27,6 @@ if (mysqli_num_rows($resultpatisserie)  > 0) {
     <div class='img'><img src='".$rowpatisserie['photo']."' alt='".$rowpatisserie['product_name']."'></div>
     <div class='description'>
         <h4>".$rowpatisserie['product_name']."</h4>
-        <h6>".$rowpatisserie['weigth']."g</h6>
         <p>".$rowpatisserie['description']."</p>
         <p>".$rowpatisserie['price']."EUR</p>
         <input type='number' name='' id=''>

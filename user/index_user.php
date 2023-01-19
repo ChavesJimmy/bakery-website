@@ -1,15 +1,20 @@
 <?php 
 session_start();
-require_once './components/db_connect.php';
+require_once '../components/db_connect.php';
 
 if(isset($_SESSION['ADMIN'])){
     header('Location: ./admin/index_admin.php');
     exit;
   }
-if(isset($_SESSION['USER'])){
-    header('Location: ./user/index_user.php');
-    exit;
-  }
+
+    $sql="SELECT * FROM user WHERE user_id={$_SESSION['USER']}";
+    $result = mysqli_query($connect, $sql);
+    $tbody = '';
+    if (mysqli_num_rows($result)  > 0) {
+      $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+      $tbody=$row['user_name'];
+    
+    }
   ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,13 +23,15 @@ if(isset($_SESSION['USER'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Noppe Bäckerei</title>
-    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="../style/style.css">
 </head>
 <body>
-    <?php require_once 'components/navbar.php' ?>
+
+    <?php require_once '../components/navbar_user.php' ?>
+<div class="resume"> Welcome <?= $tbody?> !</div> <br>
 
     <div id="carousel">
-        <?php require_once 'components/carousel.php'?>
+        <?php require_once '../components/carousel.php'?>
     </div>
     <div id="articles">
     <h2>INFOS</h2>
@@ -55,12 +62,12 @@ Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae nulla magni 
             <button type="submit">Send review</button>
         </form>
     </div>
-    <?php require_once 'components/footer.php' ?>
+    <?php require_once '../components/footer.php' ?>
 
-    <div id="admin"><a href="login.php"><img src="https://cdn.pixabay.com/photo/2021/06/04/01/22/chef-6308412__480.png" alt="admin"></a></div>
+    <div id="admin"><a href="../login.php"><img src="https://cdn.pixabay.com/photo/2021/06/04/01/22/chef-6308412__480.png" alt="admin"></a></div>
     <script>
     
-        <?php require_once 'scripts/script_carousel.js'?>
+        <?php require_once '../scripts/script_carousel.js'?>
     </script>
 </body>
 </html>

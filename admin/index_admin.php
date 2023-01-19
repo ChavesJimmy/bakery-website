@@ -7,12 +7,12 @@ if(!isset($_SESSION['ADMIN'])){
     exit;
   }
 
-$sql="SELECT * FROM admin WHERE admin_id={$_SESSION['ADMIN']}";
+$sql="SELECT * FROM user WHERE user_id={$_SESSION['ADMIN']}";
 $result = mysqli_query($connect, $sql);
 $tbody = '';
 if (mysqli_num_rows($result)  > 0) {
   $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
-  $tbody=$row['admin_name'];
+  $tbody=$row['user_name'];
 
 }
 ?>
