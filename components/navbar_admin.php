@@ -1,9 +1,18 @@
+<?php
+    $tbody="";
+if(isset($_SESSION['ADMIN'])){
+    $sql="SELECT * FROM user WHERE user_id={$_SESSION['ADMIN']}";
+    $result = mysqli_query($connect, $sql);
+    if (mysqli_num_rows($result)  > 0) {
+      $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+      $tbody=$row['user_name'];}}
+      ?>
 <div id="navbar">
     <div id="links">
         <div id="flexlinks">
         <div class="links left">
             <a href="addarticle.php">Article</a>
-            <a href="addprodukte.php">Produkte</a>
+            <a href="products_list.php">Produkte</a>
             <a href="addprodukte.php">Carousel</a>
             <a href="addjobs.php">Karriere</a>
             <a href="showorders.php">Orders</a>
@@ -18,3 +27,6 @@
 </div>
    
 <div id="title">NOPPE BÄCKEREI</div>
+<div class="welcome">Welcome <?= $tbody?>     <a href="../logout.php?logout"><button>log out</button></a>
+</div>  
+

@@ -1,6 +1,6 @@
 <?php 
-require_once "./components/db_connect.php";
-
+require_once "../components/db_connect.php";
+session_start();
 //display brot
 $sqlbrot="SELECT * FROM products WHERE category='brot'";
 $resultbrot = mysqli_query($connect, $sqlbrot);
@@ -10,7 +10,12 @@ if (mysqli_num_rows($resultbrot)  > 0) {
     $tbodybrot .="<div class='card'>
     <img src='".$rowbrot['photo']."' alt='".$rowbrot['product_name']."'>   
     <h4>".$rowbrot['product_name']."</h4>
-    <p class='price'>".$rowbrot['price']."EUR<br><a href='details.php?id=".$rowbrot['product_id']."'>details</a></p>
+    <p>".$rowbrot['description']."</p>
+    <p>".$rowbrot['price']."EUR</p>
+    <div id='btnaction'>
+    <button>+</button><button>-</button>
+    <button><a href=''>add to cart</a></button>
+    </div>
         
 </div>";}}
 else{
@@ -26,6 +31,7 @@ if (mysqli_num_rows($resultpatisserie)  > 0) {
     <div class='img'><img src='".$rowpatisserie['photo']."' alt='".$rowpatisserie['product_name']."'></div>
     <div class='description'>
         <h4>".$rowpatisserie['product_name']."</h4>
+        <p>".$rowpatisserie['description']."</p>
         <p>".$rowpatisserie['price']."EUR</p>
         <input type='number' name='' id=''>
         <button>+</button><button>-</button>
@@ -129,10 +135,10 @@ else{
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products</title>
-    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="../style/style.css">
 </head>
 <body>
-    <?php require_once 'components/navbar.php' ?>
+    <?php require_once '../components/navbar_user.php' ?>
    
     <div id="menu">
             <a href="#brot">Brot</a>
@@ -146,12 +152,9 @@ else{
 <div class="path">
         <a href="index.php">🏠 Startseite</a> > <a href="products.php">produkte</a>
     </div>
-<div id="goregister">
-    If you want to order online, register now ! <br> <br>> > > <a href="register.php">REGISTER</a>< < <
-</div>
-<div id="container">        
-    <h3>Unser Brot</h3>
+<div id="container">
     <div id="brot">
+        <h3>Unser Brot</h3>
         <?= $tbodybrot?>
     </div>
     <div id="viennoiserie">

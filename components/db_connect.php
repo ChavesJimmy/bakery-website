@@ -5,6 +5,12 @@ $username = "jimmycodefactory_bakery";
 $password = "bakeryNoppe";
 $dbname = "jimmycodefactory_bakery_shop";
 
+/* $localhost = "localhost";
+$username = "root";
+$password = "";
+$dbname = "bakery"; */
+
+
 // create connection
 $connect = new  mysqli($localhost, $username, $password, $dbname);
 

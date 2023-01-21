@@ -37,6 +37,8 @@ if (isset($_POST['login'])) {
 
 
   if (!$error) {
+    $password = hash('sha256', $password);
+
    $sql = "SELECT user_id, user_name, password,session FROM user WHERE user_name = '$user_name'";
     $result = mysqli_query($connect, $sql);
     $row = mysqli_fetch_assoc($result);
@@ -128,5 +130,6 @@ mysqli_close($connect);
       Sign In
     </button>
   </form>
+  <a href="register.php">Not registered yet...</a>
 <body>
   </html>

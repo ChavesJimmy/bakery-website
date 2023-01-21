@@ -2,10 +2,50 @@
     display: block;
     width: 80%;
     border: solid 2px;
-
+    margin: auto;
+    margin-top: 5rem;
+    text-align: center;
+    form{
+        padding: 1rem;
+    }
+    label{
+        font-weight: bold;
+    }
+    input{
+        width: 80%;
+        margin: auto;
+        height: 25px;
+        padding: 0.5rem;
+        border-radius: 25px;
+    }
     form{
         display: flex;
         flex-direction: column;
         text-align: center;
+    }
+    textarea{
+        height: 350px;        
+        border-radius: 25px;
+
+    }
+    button{
+        width: 25%;
+        margin: auto;
+        margin-top: 3rem;
+    }
+    select{
+        width: 25%;
+        margin: auto;
+        margin-top: 1rem;
+        padding: 0.5rem;
+        border-radius: 25px;
+        text-align: center;
+        font-weight: bold;
+    }
+    #upload{
+        display: hidden;        
+        background-color: white;
+        padding: 1rem;
+        font-weight: bold;
     }
 }

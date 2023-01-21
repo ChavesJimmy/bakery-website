@@ -1,6 +1,8 @@
 <?php 
-require_once "components/db_connect.php";
+require_once "../components/db_connect.php";
 $tbody = '';
+session_start();
+
 $sql="SELECT * FROM comments order by date desc ";
 $result = mysqli_query($connect, $sql);
 if (mysqli_num_rows($result)  > 0) {

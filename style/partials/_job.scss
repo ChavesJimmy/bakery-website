@@ -1,0 +1,27 @@
+#jobs{
+    margin: auto;
+    margin-top: 2rem;
+    border: solid 3px;
+    border-radius: 25px;
+    width: 80%;
+    padding: 2rem;
+    background-color: burlywood;
+    .angebot{
+        border: solid;
+        padding: 1rem;
+        border-radius: 25px;
+        background-color: transparentize($color: white, $amount: 0.1);
+        width: 90%;
+        padding-bottom: 1rem;
+        margin: auto;
+        text-align: left;
+        h3{
+            text-align: center;
+            width: 25% ;
+            margin: auto;
+            border-bottom: 2px solid ;
+            padding-bottom: 0.5rem;        
+        }
+    }
+
+}

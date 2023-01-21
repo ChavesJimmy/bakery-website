@@ -5,6 +5,13 @@ body{
     margin: auto;
     font-weight: bold;
     margin-bottom: 1rem;
+    button{
+        background-color: lightcoral;
+        padding: 0.5rem;
+        border-radius: 25px;
+        font-weight: bold;
+        float: right;
+    }
 }
 #actions{
     display :flex;

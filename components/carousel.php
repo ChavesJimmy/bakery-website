@@ -1,3 +1,4 @@
+
 <div class="slideshow-container">
 
 <div class="mySlides fade">
@@ -5,7 +6,6 @@
   <div class="text">Little break for the team after Christmas holidays <br>
     <a href="#articles">Infos</a></div>
 </div>
-
 <div class="mySlides fade">
   <img src="https://cdn.pixabay.com/photo/2017/06/23/23/57/bread-2436370__480.jpg" style="width:100%">
   <div class="text">Our products sortiment<br>
@@ -27,8 +27,8 @@
 </div>
 <br>
 
-<div style="text-align:center">
+<!--<div style="text-align:center">
   <span class="dot" onclick="currentSlide(1)"></span> 
   <span class="dot" onclick="currentSlide(2)"></span> 
   <span class="dot" onclick="currentSlide(3)"></span> 
-</div>
+</div>-->

@@ -13,7 +13,16 @@
         display: flex;
         justify-content: space-evenly;
         gap: 40%;
-           
+    .right{
+        #login{
+            background-color: lightgoldenrodyellow;
+            border-radius: 25px;
+            border: solid black 2px;
+        }
+        #login:hover{
+            background-color: lightgreen;
+        }
+    }       
     .right,.left{
         display: flex;
         justify-content: space-evenly;
@@ -25,11 +34,11 @@
             font-weight: bold;
             transition: 0.5s;
         }
+        
         a:hover{
             border-top :solid 3px;
             border-bottom :solid 3px;
             border-radius: 15%;
-            padding: 0.5rem;
             font-size: 110%;
             width: 100%;
             padding-bottom: 0px;

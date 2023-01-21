@@ -10,6 +10,31 @@ if(isset($_SESSION['USER'])){
     header('Location: ./user/index_user.php');
     exit;
   }
+  //display all the news
+$sqlnews="SELECT * FROM article WHERE category='news' and displayed=1";
+$resultnews = mysqli_query($connect, $sqlnews);
+$tbodynews = '';
+if (mysqli_num_rows($resultnews)  > 0) {
+    while($rownews = mysqli_fetch_array($resultnews, MYSQLI_ASSOC)){
+        if($rownews['image'] == true){
+    $tbodynews .="<div class='article'>
+    <div class='img_article'><img src='./image_article/".$rownews['image']."'></div>
+    <div class='article_body'>
+    <h5>".$rownews['title']."</h5>
+    ".$rownews['article_text']."<br><br> <small>".$rownews['publication_date']."</small></div>
+    </div>";}
+    else{
+        $tbodynews .="<div class='simplearticle'>
+        <h5>".$rownews['title']."</h5>
+        ".$rownews['article_text']."<br><br> <small>".$rownews['publication_date']."</small>
+        </div>"; 
+    }
+    }}
+
+else{
+   $tbodynews="No news";
+}
+  
   ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,14 +53,9 @@ if(isset($_SESSION['USER'])){
     </div>
     <div id="articles">
     <h2>INFOS</h2>
-<div class="article"><h5>Article 1</h5>
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae nulla magni quod odio quibusdam voluptate doloremque. Velit praesentium maxime, nesciunt sapiente explicabo necessitatibus repellat quis illo delectus et officia accusantium expedita iure beatae, neque impedit, facere maiores nulla nobis. Quo vero fugiat rem vel? Delectus, excepturi. Facilis in iusto ipsum deserunt corporis. <br><br> <small>10 Jänner 2023</small></div>
-<div class="article"><h5>Article 2</h5>
-Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae nulla magni quod odio quibusdam voluptate doloremque. Velit praesentium maxime, nesciunt sapiente explicabo necessitatibus repellat quis illo delectus et officia accusantium expedita iure beatae, neque impedit, facere maiores nulla nobis. Quo vero fugiat rem vel? Delectus, excepturi. Facilis in iusto ipsum deserunt corporis.</div>
-<div class="article"><h5>Article 3</h5>
-Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae nulla magni quod odio quibusdam voluptate doloremque. Velit praesentium maxime, nesciunt sapiente explicabo necessitatibus repellat quis illo delectus et officia accusantium expedita iure beatae, neque impedit, facere maiores nulla nobis. Quo vero fugiat rem vel? Delectus, excepturi. Facilis in iusto ipsum deserunt corporis.</div>
-    </div>
+    <?= $tbodynews?>
 
+    </div>
     <div id="letreview">
         <form  method="post">
             <h2>Leave a review</h2>
@@ -57,7 +77,6 @@ Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae nulla magni 
     </div>
     <?php require_once 'components/footer.php' ?>
 
-    <div id="admin"><a href="login.php"><img src="https://cdn.pixabay.com/photo/2021/06/04/01/22/chef-6308412__480.png" alt="admin"></a></div>
     <script>
     
         <?php require_once 'scripts/script_carousel.js'?>

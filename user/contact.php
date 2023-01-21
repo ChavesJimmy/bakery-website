@@ -1,8 +1,6 @@
 <?php 
-require_once "./components/db_connect.php";
-session_start()
-
-?>
+require_once "../components/db_connect.php";
+session_start()?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,16 +8,16 @@ session_start()
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="../style/style.css">
 </head>
 <body>
-    <?php require_once './components/navbar.php'?>  
+    <?php require_once '../components/navbar_user.php' ;?>  
     <div class="path">
         <a href="index.php">🏠 Startseite</a>><a href="contact.php">contact</a>
     </div>
     <h1>How to contact us?</h1>
     <h4>Our address</h4>
-    <?php require_once './components/googleMaps/location.html' ?></div>
+    <?php require_once '../components/googleMaps/location.html' ?></div>
   
         <div class="address">
             xxX bakerstrasse 1234 WIEN
@@ -43,6 +41,6 @@ session_start()
     </div>
     
 
-    <?php require_once './components/footer.php' ?>
+    <?php require_once '../components/footer_user.php' ?>
 </body>
 </html>

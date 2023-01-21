@@ -1,15 +1,15 @@
 <?php
 require_once "components/db_connect.php";
-$sql="SELECT * FROM article WHERE article_type='jobs'";
+$sql="SELECT * FROM article WHERE category='job'";
 $result = mysqli_query($connect, $sql);
 $tbody = '';
 if (mysqli_num_rows($result)  > 0) {
     while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
         $tbody="<div class='angebot'>
-        <h3>".$row['article_title']."</h3>
-        <p>".$row['article_content']."</p>
-        <span>Start :". $row['start']."</span><br>
-        <span>Salary : ".$row['salary']."</span>
+        <h3>".$row['title']."</h3>
+        <p>".$row['article_text']."</p><br>
+        <small>added the ".$row['publication_date']."</small>
+        
     </div>";
 
     }}
