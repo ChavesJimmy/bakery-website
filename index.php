@@ -10,6 +10,23 @@ if(isset($_SESSION['USER'])){
     header('Location: ./user/index_user.php');
     exit;
   }
+  //post review
+  if (isset($_POST["submit"])) {
+    $comment = $_POST['comment'];
+    $rate = $_POST['rate'];
+    $date = date('d M Y');
+    $username = $_POST['author'];
+
+    $sql = "INSERT INTO comments (author, comment, date, rate) VALUES ('$username','$comment','$date','$rate')";
+    if (mysqli_query($connect, $sql) === true) {
+        $class = "alert alert-success";
+        $message = "The record was successfully updated";
+        header("refresh:10;url=../user/index_user.php");
+    } else {
+        $class = "alert alert-danger";
+        $message = "Error while updating record : <br>" . $connect->error;
+    }
+}
   //display all the news
 $sqlnews="SELECT * FROM article WHERE category='news' and displayed=1";
 $resultnews = mysqli_query($connect, $sqlnews);
@@ -57,10 +74,10 @@ else{
 
     </div>
     <div id="letreview">
-        <form  method="post">
+    <form method="post" action="./actions/addcomment.php" enctype="multipart/form-data">
             <h2>Leave a review</h2>
             <label for="" name="author">Name/Pseudo</label>
-            <input type="text">
+            <input type="text" name="author">
             <label for="Rate">rate us</label>
             <select name="rate" >
                 <option value=5>⭐⭐⭐⭐⭐</option>

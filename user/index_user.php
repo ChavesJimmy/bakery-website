@@ -15,22 +15,32 @@ if(isset($_SESSION['ADMIN'])){
       $tbody=$row['user_name'];
     
     }
-    if (isset($_POST["submit"])) {
-        $comment = $_POST['comment'];
-        $rate = $_POST['rate'];
-        $date = date('d M Y');
-        $username = $_POST['author'];
-    
-        $sql = "INSERT INTO comments (author, comment, date, rate) VALUES ('$username','$comment','$date','$rate')";
-        if (mysqli_query($connect, $sql) === true) {
-            $class = "alert alert-success";
-            $message = "The record was successfully updated";
-            header("refresh:10;url=../user/index_user.php");
-        } else {
-            $class = "alert alert-danger";
-            $message = "Error while updating record : <br>" . $connect->error;
-        }
+    }
+    //display all the news
+$sqlnews="SELECT * FROM article WHERE category='news' and displayed=1";
+$resultnews = mysqli_query($connect, $sqlnews);
+$tbodynews = '';
+if (mysqli_num_rows($resultnews)  > 0) {
+    while($rownews = mysqli_fetch_array($resultnews, MYSQLI_ASSOC)){
+        if($rownews['image'] == true){
+    $tbodynews .="<div class='article'>
+    <div class='img_article'><img src='./image_article/".$rownews['image']."'></div>
+    <div class='article_body'>
+    <h5>".$rownews['title']."</h5>
+    ".$rownews['article_text']."<br><br> <small>".$rownews['publication_date']."</small></div>
+    </div>";}
+    else{
+        $tbodynews .="<div class='simplearticle'>
+        <h5>".$rownews['title']."</h5>
+        ".$rownews['article_text']."<br><br> <small>".$rownews['publication_date']."</small>
+        </div>"; 
+    }
     }}
+
+else{
+   $tbodynews="No news";
+}
+  
   ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -51,19 +61,15 @@ if(isset($_SESSION['ADMIN'])){
     </div>
     <div id="articles">
     <h2>INFOS</h2>
-<div class="article"><h5>Article 1</h5>
-    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae nulla magni quod odio quibusdam voluptate doloremque. Velit praesentium maxime, nesciunt sapiente explicabo necessitatibus repellat quis illo delectus et officia accusantium expedita iure beatae, neque impedit, facere maiores nulla nobis. Quo vero fugiat rem vel? Delectus, excepturi. Facilis in iusto ipsum deserunt corporis. <br><br> <small>10 Jänner 2023</small></div>
-<div class="article"><h5>Article 2</h5>
-Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae nulla magni quod odio quibusdam voluptate doloremque. Velit praesentium maxime, nesciunt sapiente explicabo necessitatibus repellat quis illo delectus et officia accusantium expedita iure beatae, neque impedit, facere maiores nulla nobis. Quo vero fugiat rem vel? Delectus, excepturi. Facilis in iusto ipsum deserunt corporis.</div>
-<div class="article"><h5>Article 3</h5>
-Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae nulla magni quod odio quibusdam voluptate doloremque. Velit praesentium maxime, nesciunt sapiente explicabo necessitatibus repellat quis illo delectus et officia accusantium expedita iure beatae, neque impedit, facere maiores nulla nobis. Quo vero fugiat rem vel? Delectus, excepturi. Facilis in iusto ipsum deserunt corporis.</div>
-    </div>
+    <?= $tbodynews?>
+</div>
+
 
     <div id="letreview">
-        <form method="post" enctype="multipart/form-data">
+        <form method="post" action="../actions/addcomment.php" enctype="multipart/form-data">
             <h2>Leave a review</h2>
-            <label for="" name="author" >Name/Pseudo</label>
-            <input class="form-control" type="text" name="author" value="<?= $tbody?>">
+            <label for="" name="author" >Review from <h2><?= $tbody?></h2></label>
+            <input class="form-control" type="hidden" name="author" value="<?= $tbody?>">
             <label for="Rate">rate us</label>
             <select class="form-control" name="rate" >
                 <option value=null default></option>
@@ -80,8 +86,6 @@ Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae nulla magni 
         </form>
     </div>
     <?php require_once '../components/footer_user.php' ?>
-
-    <div id="admin"><a href="../login.php"><img src="https://cdn.pixabay.com/photo/2021/06/04/01/22/chef-6308412__480.png" alt="admin"></a></div>
     <script>
     
         <?php require_once '../scripts/script_carousel.js'?>

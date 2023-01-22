@@ -1,5 +1,14 @@
 <?php 
 require_once "components/db_connect.php";
+session_start();
+if(isset($_SESSION['ADMIN'])){
+    header('Location: ./admin/index_admin.php');
+    exit;
+  }
+  if(isset($_SESSION['USER'])){
+    header('Location: ./user/impressum.php');
+    exit;
+  }
 $tbody = '';
 $sql="SELECT * FROM comments order by date desc ";
 $result = mysqli_query($connect, $sql);

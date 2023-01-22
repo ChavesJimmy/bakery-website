@@ -11,7 +11,7 @@ if ($_POST) {
     if (mysqli_query($connect, $sql) === true) {
         $class = "alert alert-success";
         $message = "The comment was successfully added";
-        header("refresh:5;url=../user/impressum.php");
+        header("refresh:5;url=../impressum.php");
     } else {
         $class = "alert alert-danger";
         $message = "Error while updating record : <br>" . $connect->error;

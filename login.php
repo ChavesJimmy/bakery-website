@@ -107,6 +107,26 @@ mysqli_close($connect);
 
 
     }
+    .register{
+      text-align:center;
+      display:block;
+      margin:auto;
+      width:15%;
+      padding:0.5rem;
+      margin-top:1rem;
+      color: black;
+      border:solid 2px;
+      border-radius:25px;
+      transition:1s;
+      background-color: burlywood;
+
+    }
+    .register:hover{
+      background-color: black;
+      font-weight: bold;
+      color:burlywood
+
+    }
   </style>
 </head>
 
@@ -130,6 +150,6 @@ mysqli_close($connect);
       Sign In
     </button>
   </form>
-  <a href="register.php">Not registered yet...</a>
+  <a class='register' href="register.php">Not registered yet...</a>
 <body>
   </html>

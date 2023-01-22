@@ -1,3 +1,7 @@
+<?php
+require_once "../components/db_connect.php";
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,10 +9,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./style/style.css">
+    <link rel="stylesheet" href="../style/style.css">
 </head>
 <body>
-    <?php require_once 'components/navbar_user.php' ?>
+    <?php require_once '../components/navbar_user.php' ?>
     <div class="path">
         <a href="index.php">🏠 Startseite</a>><a href="überuns.php">über uns</a>
     </div>
@@ -30,6 +34,6 @@
         <div class="picture"><img src="https://cdn.pixabay.com/photo/2016/08/08/21/43/bakery-1579373__480.png" alt=""></div>
     </div>
     </div>
-    <?php require_once 'components/footer.php' ?>
+    <?php require_once '../components/footer_user.php' ?>
 </body>
 </html>

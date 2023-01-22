@@ -756,7 +756,7 @@ table .btn-warning {
   font-weight: bold;
 }
 #register .container button, #register .container a {
-  width: 20%;
+  width: 30%;
   margin: auto;
   border-radius: 25px;
   padding: 1rem;
@@ -770,7 +770,8 @@ table .btn-warning {
   box-shadow: white 0 0 15px 5px;
 }
 #register .container a {
-  width: 10%;
+  width: 15%;
+  background-color: whitesmoke;
   text-align: center;
   text-decoration: none;
   padding: 1rem;
