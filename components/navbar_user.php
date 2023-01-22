@@ -1,5 +1,6 @@
 <?php
 $tbody = '';
+$tid="";
 
 if(isset($_SESSION['USER'])){
    
@@ -8,6 +9,7 @@ if(isset($_SESSION['USER'])){
     if (mysqli_num_rows($result)  > 0) {
       $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
       $tbody=$row['user_name'];
+      $tid=$row['user_id'];
     
     }}
 ?>

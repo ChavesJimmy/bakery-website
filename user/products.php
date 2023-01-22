@@ -11,9 +11,14 @@ if (mysqli_num_rows($resultbrot)  > 0) {
         <img src='".$rowbrot['photo']."' alt='".$rowbrot['product_name']."'>   
         <h4>".$rowbrot['product_name']."</h4>
         <p class='price'>".$rowbrot['price']."EUR<br><a href='details.php?id=".$rowbrot['product_id']."'>details</a></p>
+
+        <form method='post' action='../actions/add_to_cart.php' enctype='multipart/form-data'>
         <label>Quantity</label>
-        <input type='number' name='' id='' min='1' default='1'>
-        <button><a href=''>add to cart</a></button>
+        <input type='number' name='quantity' min='1'>
+        <input type='hidden' name='product_id' value='".$rowbrot['product_id']."'>
+        <button type='submit'>add to cart</button>
+        </form>
+
     </div>";}}
 else{
    $tbodybrot="No Brot available";
@@ -83,6 +88,7 @@ else{
     $tbodypikant="No Pikant available";
  }
  //display divers
+ $message="";
 $sqldivers="SELECT * FROM products WHERE category='divers'";
 $resultdivers = mysqli_query($connect, $sqldivers);
 $tbodydivers = '';
@@ -93,11 +99,12 @@ if (mysqli_num_rows($resultdivers)  > 0) {
         <h4>".$rowdivers['product_name']."</h4>
         <p class='price'>".$rowdivers['price']."EUR<br><a href='details.php?id=".$rowdivers['product_id']."'>details</a></p>
         <input type='number' name='' id='' min='1' default='1'>
-        <button><a href=''>add to cart</a></button>
+        <button type='submit'>add to cart</button>
     </div>";}}
 else{
     $tbodydivers="No Pikant available";
  }
+
 
 
 ?>
@@ -112,7 +119,6 @@ else{
 </head>
 <body>
     <?php require_once '../components/navbar_user.php' ?>
-   
     <div id="menu">
             <a href="#brot">Brot</a>
             <a href="#viennoiserie">Viennoiserie</a>
@@ -121,7 +127,6 @@ else{
             <a href="#pikant">Pikant</a>
             <a href="#divers">Divers</a>
 </div> 
-
 <div class="path">
         <a href="index.php">🏠 Startseite</a> > <a href="products.php">produkte</a>
     </div>
@@ -151,6 +156,6 @@ else{
 </div>
 </div>
     <?php require_once '../components/footer_user.php' ?>
-
+<form action="products.php" method="post"></form>
 </body> 
 </html>
