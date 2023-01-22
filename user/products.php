@@ -65,8 +65,14 @@ if (mysqli_num_rows($resultvienn)  > 0) {
         <img src='".$rowvienn['photo']."' alt='".$rowvienn['product_name']."'>   
         <h4>".$rowvienn['product_name']."</h4>
         <p class='price'>".$rowvienn['price']."EUR<br><a href='details.php?id=".$rowvienn['product_id']."'>details</a></p>
-        <input type='number' name='' id='' min='1' default='1'>
-        <button><a href=''>add to cart</a></button>
+
+        <form method='post' action='../actions/add_to_cart.php' enctype='multipart/form-data'>
+        <label>Quantity</label>
+        <input type='number' name='quantity' min='1'>
+        <input type='hidden' name='product_id' value='".$rowvienn['product_id']."'>
+        <button type='submit'>add to cart</button>
+        </form>
+
     </div>";}}
 else{
     $tbodyvienn="No Viennoiserie available";
@@ -130,30 +136,31 @@ else{
 <div class="path">
         <a href="index.php">🏠 Startseite</a> > <a href="products.php">produkte</a>
     </div>
-<div id="container">
+    <div id="container">        
+    <h3>Unser Brot</h3>
     <div id="brot">
-        <h3>Unser Brot</h3>
         <?= $tbodybrot?>
     </div>
+    <h3>Unser Viennoiserie</h3>
     <div id="viennoiserie">
-        <h3>Unser Viennoiserie</h3>
         <?= $tbodyvienn?>
+    </div>
+    <h3>Unser Patisserie</h3>
     <div id="patisserie">
-        <h3>Unser Patisserie</h3>
         <?= $tbodypatisserie?>
     </div>
+    <h3>Unser Geback</h3>
     <div id="geback">
-        <h3>Unser Geback</h3>
         <?= $tbodygeback?>
     </div>
+    <h3>Unser Pikant</h3>
     <div id="pikant">
-        <h3>Unser Pikant</h3>
         <?= $tbodypikant?>
-</div>
+    </div>
+    <h3>Unser Divers</h3>
     <div id="divers">
-        <h3>Unser Divers</h3>
         <?= $tbodydivers?>
-</div>
+    </div>
 </div>
     <?php require_once '../components/footer_user.php' ?>
 <form action="products.php" method="post"></form>

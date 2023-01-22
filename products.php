@@ -126,25 +126,26 @@ else{
     <div id="brot">
         <?= $tbodybrot?>
     </div>
+    <h3>Unser Viennoiserie</h3>
     <div id="viennoiserie">
-        <h3>Unser Viennoiserie</h3>
         <?= $tbodyvienn?>
+    </div>
+    <h3>Unser Patisserie</h3>
     <div id="patisserie">
-        <h3>Unser Patisserie</h3>
         <?= $tbodypatisserie?>
     </div>
+    <h3>Unser Geback</h3>
     <div id="geback">
-        <h3>Unser Geback</h3>
         <?= $tbodygeback?>
     </div>
+    <h3>Unser Pikant</h3>
     <div id="pikant">
-        <h3>Unser Pikant</h3>
         <?= $tbodypikant?>
-</div>
+    </div>
+    <h3>Unser Divers</h3>
     <div id="divers">
-        <h3>Unser Divers</h3>
         <?= $tbodydivers?>
-</div>
+    </div>
 </div>
     <?php require_once 'components/footer.php' ?>
 

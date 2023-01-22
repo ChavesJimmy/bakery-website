@@ -430,11 +430,11 @@ h3 {
   text-align: center;
 }
 
-#brot {
+#brot, #viennoiserie {
   display: flex;
   flex-wrap: wrap;
 }
-#brot .card {
+#brot .card, #viennoiserie .card {
   display: flex;
   flex-direction: column;
   gap: -2rem;
@@ -445,16 +445,16 @@ h3 {
   border-radius: 25px;
   padding: 0.5rem;
 }
-#brot .card img {
+#brot .card img, #viennoiserie .card img {
   border-radius: 25px;
   transition: 2s;
   height: 50%;
 }
-#brot .card h4 {
+#brot .card h4, #viennoiserie .card h4 {
   font-size: 200%;
   height: 15%;
 }
-#brot .card h4, #brot .card p {
+#brot .card h4, #brot .card p, #viennoiserie .card h4, #viennoiserie .card p {
   height: 15%;
   padding: 0.5rem;
   text-align: center;
@@ -501,10 +501,10 @@ h3 {
 #korb .bill {
   background-color: white;
   width: 25%;
-  height: 200px;
+  height: 25px;
   border: solid 2px;
   border-radius: 25px;
-  padding: 0.5rem;
+  padding: 1.5rem;
   margin: auto;
   text-align: center;
 }
