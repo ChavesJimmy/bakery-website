@@ -56,20 +56,39 @@ if($_SESSION['USER']){
         </div>
     </div>
     <div id="payment">
-        <form action="order.php" method="post">
+        <form action="../actions/confirm_order.php" method="post">
             <label for="">Name</label>
             <input type="hidden" name="name" value="<?= $row['user_name']?>"><?= $row['user_name']?><br><br>
             <label for="Phone">Email</label>
-            <input type="hidden" name="email"  value="<?= $row['email']?>"><?= $row['email']?><br><br>
-            <select name="" id="">
-                <option value="">>Click and collect</option>
-                <option value="">>Visa</option>
-                <option value="">other</option>
-            </select>
+            <input type="hidden" name="email" value="<?= $row['email']?>"><?= $row['email']?><br><br>
+            <label for="pickup">Pickup date <br> (all commands must be made at least the day before the pick up) </label>
+            <input type="date" name="pickup" id="datePickerId"><br><br>
+            <label for="pichup">Pickup hour <br> (all commands must be made at least the day before the pick up) </label>
+            <input type="time" name="pickup_time" id="time" min="06:00" max="16:00">
+            <input type="hidden" name="total_price" value=<?= $totalprice?>>
             <button type="submit">Book</button>
         </form>
     </div>
    
     <?php require_once '../components/footer_user.php' ?>
+    <script>
+        //min date tomorrow
+        const today = new Date();
+        console.log("today => ",today);
+        let tomorrow =  new Date();
+        tomorrow.setDate(today.getDate() + 1);
+        console.log("tomorrow => ",tomorrow);
+        datePickerId.min = new Date(tomorrow).toISOString().split("T")[0];
+        //disables day off
+        const picker = document.getElementById('datePickerId'); 
+        picker.addEventListener('input', function(e){
+        var day = new Date(this.value).getUTCDay();
+        if([1].includes(day)){
+        e.preventDefault();
+        this.value = '';
+        alert('we are closed on monday');
+  }
+});
+    </script>
 </body>
 </html>

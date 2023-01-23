@@ -36,7 +36,8 @@ if($image->error === 0){
 
 <head>
     <meta charset="UTF-8">
-    <title>Update</title>
+    <title>Add news/job</title>
+    <link rel="stylesheet" href="../style/style.css">
 </head>
 
 <body>

@@ -16,7 +16,7 @@ session_start()
     
     <div id="addarticle">
         <h1>Add news/job offer</h1>
-        <form action="../actions/a_create.php" method="post" enctype="multipart/form-data">
+        <form action="../actions/a_article.php" method="post" enctype="multipart/form-data">
             <label for="title">Title</label>
             <input type="text" name="title" id="">
             <label for="article">Article</label>
