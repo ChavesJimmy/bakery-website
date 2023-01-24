@@ -78,10 +78,27 @@
     display: block;
     float: right;
     margin-right: 1rem;
+    background-color: transparentize($color: white, $amount: 0.5);
     margin-top: 1rem;
     border-bottom: solid 2px;
     border-radius: 25px;
     padding: 0.5rem;
+    font-weight: bold;
+    button{
+        background-color: black;
+        color: lightcoral;
+        border: solid 2px;
+        padding: 0.5rem;
+        border-radius: 25px;
+        font-weight: bold;
+        transition: 1s;
+
+    }
+    button:hover{
+        background-color: lightcoral;
+        color: black;
+        box-shadow: lightcoral 0 0 5px 2px;
+    }
 }
 #title{
     font-size: 300%;

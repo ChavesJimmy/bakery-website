@@ -17,11 +17,11 @@ if($image->error === 0){
     $sql = "INSERT INTO article (article_text, title, image, category, publication_date) VALUES('$text', '$title', '$image->fileName', '$category', '$date')";
 
     if (mysqli_query($connect, $sql) === true) {
-        $class = "success";
+        $message = $category ."successfully created";
         $uploadError = ($image->error != 0) ? $image->ErrorMessage : '';
 
     } else {
-        $class = "danger";
+        $message = "Problem while adding article";
         $uploadError = ($image->error != 0) ? $image->ErrorMessage : '';
     }
     mysqli_close($connect);
@@ -41,15 +41,8 @@ if($image->error === 0){
 </head>
 
 <body>
-    <div class="container">
-        <div class="mt-3 mb-3">
-            <h1>Create request response</h1>
-        </div>
-        <div class="alert alert-<?= $class; ?>" role="alert">
-            <p><?php echo ($message) ?? ''; ?></p>
-            <p><?php echo ($uploadError) ?? ''; ?></p>
-            <a href='../admin/index_admin.php'><button class="btn btn-primary" type='button'>Home</button></a>
-        </div>
+    <div class="action">
+        <?= $message?>
     </div>
 </body>
 </html>

@@ -36,7 +36,7 @@ if ($_POST) {
     $sql = "INSERT INTO orders (buyer, total_price, date_of_order, fk_product, delivery_date, pickup_time, user_email) VALUES ('$username', $totalprice,'$date', {$rowcart['fk_product']} ,'$pickup','$pickup_time','$email')";}
 
     if (mysqli_query($connect, $sql) === true) {
-        mail(
+/*         mail(
             $to = $email,
             $subject = "Your Order @ Noppe Bakery",
             $message = "Your order was succesfull !
@@ -46,7 +46,7 @@ if ($_POST) {
             
             Thank you for your order !
             Your Noppe Team."
-        );
+        ); */
         $delete = "DELETE FROM shopping_cart WHERE fk_session = {$_SESSION['USER']}";
         if ($connect->query($delete) === TRUE) {
             $class = "alert alert-success";
@@ -55,12 +55,11 @@ if ($_POST) {
             $class = "alert alert-danger";
             $message = "The entry was not deleted due to: <br>" . $connect->error;
         }
-        $class = "alert alert-success";
-        $message = "The comment was successfully added";
-        header("refresh:2;url=../user/index_user.php");
+        $message = "Your order was successful! <br>
+        You will receive an email with the details of your order soon.";
+        header("refresh:3;url=../user/index_user.php");
     } else {
-        $class = "alert alert-danger";
-        $message = "Error while updating record : <br>" . $connect->error;
+        $message = "Error while confirming order, try again later : <br>" . $connect->error;
     }
 }
 ?>
@@ -70,10 +69,12 @@ if ($_POST) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>confirm order</title>
+    <link rel="stylesheet" href="../style/style.css">
 </head>
 <body>
+    <div class="action">
     <?= $message?>
-    
+    </div>
 </body>
 </html>

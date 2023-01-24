@@ -68,10 +68,26 @@
   display: block;
   float: right;
   margin-right: 1rem;
+  background-color: rgba(255, 255, 255, 0.5);
   margin-top: 1rem;
   border-bottom: solid 2px;
   border-radius: 25px;
   padding: 0.5rem;
+  font-weight: bold;
+}
+.resume button {
+  background-color: black;
+  color: lightcoral;
+  border: solid 2px;
+  padding: 0.5rem;
+  border-radius: 25px;
+  font-weight: bold;
+  transition: 1s;
+}
+.resume button:hover {
+  background-color: lightcoral;
+  color: black;
+  box-shadow: lightcoral 0 0 5px 2px;
 }
 
 #title {
@@ -331,6 +347,20 @@ body {
   box-shadow: white 0 0 10px 5px;
 }
 
+.action {
+  margin: auto;
+  text-align: center;
+  font-size: 300%;
+  color: burlywood;
+  margin-top: 5rem;
+  padding: 2rem;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  width: 50%;
+  border-radius: 25px;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
 h1, h4 {
   text-align: center;
 }
@@ -437,28 +467,75 @@ h3 {
 #brot .card, #viennoiserie .card {
   display: flex;
   flex-direction: column;
-  gap: -2rem;
   width: 300px;
+  text-align: center;
+  color: black;
+  font-weight: bolder;
+  font-size: 200%;
   background-color: rgba(222, 184, 135, 0.7);
   margin: auto;
-  border: solid 2px;
+  border: black solid 3px;
   border-radius: 25px;
   padding: 0.5rem;
+  transition: 1s;
 }
 #brot .card img, #viennoiserie .card img {
   border-radius: 25px;
+  border: solid 2px;
   transition: 2s;
   height: 50%;
 }
-#brot .card h4, #viennoiserie .card h4 {
-  font-size: 200%;
-  height: 15%;
-}
-#brot .card h4, #brot .card p, #viennoiserie .card h4, #viennoiserie .card p {
-  height: 15%;
+#brot .card p, #viennoiserie .card p {
   padding: 0.5rem;
   text-align: center;
-  font-weight: bold;
+  font-size: 50%;
+}
+#brot .card a, #viennoiserie .card a {
+  text-decoration: none;
+  border: 2px solid;
+  background-color: black;
+  width: 20%;
+  height: 20px;
+  color: burlywood;
+  font-size: 50%;
+  margin: auto;
+  margin-bottom: 0.5rem;
+  border-radius: 25px;
+  transition: 1s;
+}
+#brot .card a:hover, #viennoiserie .card a:hover {
+  background-color: burlywood;
+  color: black;
+  border: solid 2px;
+  box-shadow: 0 0 5px 2px;
+}
+#brot .card input, #brot .card label, #brot .card button, #viennoiserie .card input, #viennoiserie .card label, #viennoiserie .card button {
+  text-align: center;
+  width: 20%;
+  font-size: 50%;
+  display: block;
+  margin: auto;
+}
+#brot .card input, #viennoiserie .card input {
+  height: 2rem;
+  border-radius: 25px;
+  border: solid 2px;
+}
+#brot .card button, #viennoiserie .card button {
+  margin-top: 0.5rem;
+  width: 40%;
+  padding: 0.5rem;
+  border-radius: 25px;
+  color: burlywood;
+  background-color: black;
+  transition: 1s;
+}
+#brot .card button:hover, #viennoiserie .card button:hover {
+  box-shadow: white 0 0 10px 5px;
+  color: white;
+}
+#brot .card:hover, #viennoiserie .card:hover {
+  box-shadow: black 0 0 10px 5px;
 }
 
 #history {

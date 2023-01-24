@@ -43,3 +43,17 @@ body{
         }
     }
 }
+.action{
+    margin: auto;
+    text-align: center;
+    font-size: 300%;
+    color:burlywood;
+    margin-top: 5rem;
+    padding: 2rem;
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+    width: 50%;
+    border-radius: 25px;
+    background-color: transparentize($color: black, $amount: 0.3);
+
+}

@@ -9,8 +9,9 @@ if (mysqli_num_rows($resultbrot)  > 0) {
     while($rowbrot = mysqli_fetch_array($resultbrot, MYSQLI_ASSOC)){
         $tbodybrot .="<div class='card'>
         <img src='".$rowbrot['photo']."' alt='".$rowbrot['product_name']."'>   
-        <h4>".$rowbrot['product_name']."</h4>
-        <p class='price'>".$rowbrot['price']."EUR<br><a href='details.php?id=".$rowbrot['product_id']."'>details</a></p>
+        ".$rowbrot['product_name']."
+        <p class='price'>Price : ".$rowbrot['price']."EUR</p>
+        <a href='details.php?id=".$rowbrot['product_id']."'>details</a>
 
         <form method='post' action='../actions/add_to_cart.php' enctype='multipart/form-data'>
         <label>Quantity</label>
@@ -31,10 +32,17 @@ if (mysqli_num_rows($resultpatisserie)  > 0) {
     while($rowpatisserie = mysqli_fetch_array($resultpatisserie, MYSQLI_ASSOC)){
         $tbodypatisserie .="<div class='card'>
         <img src='".$rowpatisserie['photo']."' alt='".$rowpatisserie['product_name']."'>   
-        <h4>".$rowpatisserie['product_name']."</h4>
-        <p class='price'>".$rowpatisserie['price']."EUR<br><a href='details.php?id=".$rowpatisserie['product_id']."'>details</a></p>
-        <input type='number' name='' id='' min='1' default='1'>
-        <button><a href=''>add to cart</a></button>
+        ".$rowpatisserie['product_name']."
+        <p class='price'>Price : ".$rowpatisserie['price']."EUR</p>
+        <a href='details.php?id=".$rowpatisserie['product_id']."'>details</a>
+
+        <form method='post' action='../actions/add_to_cart.php' enctype='multipart/form-data'>
+        <label>Quantity</label>
+        <input type='number' name='quantity' min='1'>
+        <input type='hidden' name='product_id' value='".$rowpatisserie['product_id']."'>
+        <button type='submit'>add to cart</button>
+        </form>
+
     </div>";}}
 else{
     $tbodypatisserie="No Patisserie available";
@@ -47,10 +55,17 @@ if (mysqli_num_rows($resultgeback)  > 0) {
     while($rowgeback = mysqli_fetch_array($resultgeback, MYSQLI_ASSOC)){
         $tbodygeback .="<div class='card'>
         <img src='".$rowgeback['photo']."' alt='".$rowgeback['product_name']."'>   
-        <h4>".$rowgeback['product_name']."</h4>
-        <p class='price'>".$rowgeback['price']."EUR<br><a href='details.php?id=".$rowgeback['product_id']."'>details</a></p>
-        <input type='number' name='' id='' min='1' default='1'>
-        <button><a href=''>add to cart</a></button>
+        ".$rowgeback['product_name']."
+        <p class='price'>Price : ".$rowgeback['price']."EUR</p>
+        <a href='details.php?id=".$rowgeback['product_id']."'>details</a>
+
+        <form method='post' action='../actions/add_to_cart.php' enctype='multipart/form-data'>
+        <label>Quantity</label>
+        <input type='number' name='quantity' min='1'>
+        <input type='hidden' name='product_id' value='".$rowgeback['product_id']."'>
+        <button type='submit'>add to cart</button>
+        </form>
+
     </div>";}}
 else{
     $tbodygeback="No Gebäck available";
@@ -63,8 +78,9 @@ if (mysqli_num_rows($resultvienn)  > 0) {
     while($rowvienn = mysqli_fetch_array($resultvienn, MYSQLI_ASSOC)){
         $tbodyvienn .="<div class='card'>
         <img src='".$rowvienn['photo']."' alt='".$rowvienn['product_name']."'>   
-        <h4>".$rowvienn['product_name']."</h4>
-        <p class='price'>".$rowvienn['price']."EUR<br><a href='details.php?id=".$rowvienn['product_id']."'>details</a></p>
+        ".$rowvienn['product_name']."
+        <p class='price'>Price : ".$rowvienn['price']."EUR</p>
+        <a href='details.php?id=".$rowvienn['product_id']."'>details</a>
 
         <form method='post' action='../actions/add_to_cart.php' enctype='multipart/form-data'>
         <label>Quantity</label>
@@ -85,10 +101,17 @@ if (mysqli_num_rows($resultpikant)  > 0) {
     while($rowpikant = mysqli_fetch_array($resultpikant, MYSQLI_ASSOC)){
         $tbodypikant .="<div class='card'>
         <img src='".$rowpikant['photo']."' alt='".$rowpikant['product_name']."'>   
-        <h4>".$rowpikant['product_name']."</h4>
-        <p class='price'>".$rowpikant['price']."EUR<br><a href='details.php?id=".$rowpikant['product_id']."'>details</a></p>
-        <input type='number' name='' id='' min='1' default='1'>
-        <button><a href=''>add to cart</a></button>
+        ".$rowpikant['product_name']."
+        <p class='price'>Price : ".$rowpikant['price']."EUR</p>
+        <a href='details.php?id=".$rowpikant['product_id']."'>details</a>
+
+        <form method='post' action='../actions/add_to_cart.php' enctype='multipart/form-data'>
+        <label>Quantity</label>
+        <input type='number' name='quantity' min='1'>
+        <input type='hidden' name='product_id' value='".$rowpikant['product_id']."'>
+        <button type='submit'>add to cart</button>
+        </form>
+
     </div>";}}
 else{
     $tbodypikant="No Pikant available";
@@ -102,17 +125,21 @@ if (mysqli_num_rows($resultdivers)  > 0) {
     while($rowdivers = mysqli_fetch_array($resultdivers, MYSQLI_ASSOC)){
         $tbodydivers .="<div class='card'>
         <img src='".$rowdivers['photo']."' alt='".$rowdivers['product_name']."'>   
-        <h4>".$rowdivers['product_name']."</h4>
-        <p class='price'>".$rowdivers['price']."EUR<br><a href='details.php?id=".$rowdivers['product_id']."'>details</a></p>
-        <input type='number' name='' id='' min='1' default='1'>
+        ".$rowdivers['product_name']."
+        <p class='price'>Price : ".$rowdivers['price']."EUR</p>
+        <a href='details.php?id=".$rowdivers['product_id']."'>details</a>
+
+        <form method='post' action='../actions/add_to_cart.php' enctype='multipart/form-data'>
+        <label>Quantity</label>
+        <input type='number' name='quantity' min='1'>
+        <input type='hidden' name='product_id' value='".$rowdivers['product_id']."'>
         <button type='submit'>add to cart</button>
+        </form>
+
     </div>";}}
 else{
     $tbodydivers="No Pikant available";
  }
-
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">

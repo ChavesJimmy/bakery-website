@@ -10,11 +10,11 @@ if ($_POST) {
     $sql = "INSERT INTO comments (author, comment, date, rate) VALUES ('$username','$comment','$date','$rate')";
     if (mysqli_query($connect, $sql) === true) {
         $class = "alert alert-success";
-        $message = "The comment was successfully added";
-        header("refresh:5;url=../impressum.php");
+        $message = "Your comment was successfully added";
+        header("refresh:2;url=../impressum.php");
     } else {
         $class = "alert alert-danger";
-        $message = "Error while updating record : <br>" . $connect->error;
+        $message = "Error while adding comment : try again later : <br>" . $connect->error;
     }
 }
 ?>
@@ -24,10 +24,12 @@ if ($_POST) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Add comment</title>
+    <link rel="stylesheet" href="../style/style.css">
 </head>
 <body>
+    <div class="action">
     <?= $message?>
-    
+    </div>
 </body>
 </html>
