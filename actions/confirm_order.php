@@ -36,7 +36,7 @@ if ($_POST) {
     $sql = "INSERT INTO orders (buyer, total_price, date_of_order, fk_product, delivery_date, pickup_time, user_email) VALUES ('$username', $totalprice,'$date', {$rowcart['fk_product']} ,'$pickup','$pickup_time','$email')";}
 
     if (mysqli_query($connect, $sql) === true) {
-/*         mail(
+        mail(
             $to = $email,
             $subject = "Your Order @ Noppe Bakery",
             $message = "Your order was succesfull !
@@ -46,7 +46,7 @@ if ($_POST) {
             
             Thank you for your order !
             Your Noppe Team."
-        ); */
+        );
         $delete = "DELETE FROM shopping_cart WHERE fk_session = {$_SESSION['USER']}";
         if ($connect->query($delete) === TRUE) {
             $class = "alert alert-success";

@@ -9,8 +9,16 @@ if (mysqli_num_rows($resultbrot)  > 0) {
     while($rowbrot = mysqli_fetch_array($resultbrot, MYSQLI_ASSOC)){
     $tbodybrot .="<div class='card'>
     <img src='".$rowbrot['photo']."' alt='".$rowbrot['product_name']."'>   
+    <div class='details'>
+    <div class='front'>
     <h4>".$rowbrot['product_name']."</h4>
-    <p class='price'>".$rowbrot['price']."EUR<br><a href='details.php?id=".$rowbrot['product_id']."'>details</a></p>
+    <p class='price'>".$rowbrot['price']."EUR<br></p>
+    </div>
+    <div class='back'>
+    <h4>".$rowbrot['product_name']."</h4>
+    ".$rowbrot['description']."
+    </div>
+    </div>
         
 </div>";}}
 else{
@@ -54,8 +62,16 @@ if (mysqli_num_rows($resultvienn)  > 0) {
     while($rowvienn = mysqli_fetch_array($resultvienn, MYSQLI_ASSOC)){
         $tbodyvienn .="<div class='card'>
         <img src='".$rowvienn['photo']."' alt='".$rowvienn['product_name']."'>   
+        <div class='details'>
+        <div class='front'>
         <h4>".$rowvienn['product_name']."</h4>
-        <p class='price'>".$rowvienn['price']."EUR<br><a href='details.php?id=".$rowvienn['product_id']."'>details</a></p>
+        <p class='price'>".$rowvienn['price']."EUR<br></p>
+        </div>
+        <div class='back'>
+        <h4>".$rowvienn['product_name']."</h4>
+        ".$rowvienn['description']."
+        </div>
+        </div>
             
     </div>";}}
 else{
