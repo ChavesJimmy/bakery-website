@@ -12,11 +12,13 @@ if (mysqli_num_rows($resultbrot)  > 0) {
     <div class='details'>
     <div class='front'>
     <h4>".$rowbrot['product_name']."</h4>
-    <p class='price'>".$rowbrot['price']."EUR<br></p>
+    <p>Hover to see details</p>
     </div>
     <div class='back'>
     <h4>".$rowbrot['product_name']."</h4>
-    ".$rowbrot['description']."
+    <p class='price'>".$rowbrot['price']."EUR<br></p>
+    ".$rowbrot['description']."<br>
+    <a href='login.php' class='LogInCard'>Log in to book your ".$rowbrot['product_name']." online</a>
     </div>
     </div>
         

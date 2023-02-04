@@ -21,12 +21,13 @@ if($_SESSION['USER']){
             $rowcount = mysqli_fetch_array($resultcount, MYSQLI_ASSOC);
             
             $tshop.="
-            <li>".$rowshop['product_name']." ".$rowshop['price']." EUR</li>";
-            $totalprice += $rowshop['price'];
+            <div>".$rowshop['product_name']." / ".$rowshop['price']." EUR
+            <form method='post' action='../actions/removeProduct.php'>
+            <input type='hidden' name='id' value=".$rowshop['cart_id'].">
+            <button type='submit'>X</button></form></div>";
+            $totalprice += $rowshop['price'];      
 
 }}}
-
-
 
 ?>
 <!DOCTYPE html>
@@ -35,7 +36,7 @@ if($_SESSION['USER']){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shoping cart</title>
+    <title>Shopping cart</title>
     <link rel="stylesheet" href="../style/style.css">
 </head>
 <body>
@@ -45,13 +46,20 @@ if($_SESSION['USER']){
     </div>
     <div id="korb">
         <div class="einkauf">
-            <h5>my einkauf</h5>
-            <ol>
+            <h5>My Shopping Cart</h5>
+            <div>
                <?= $tshop?> 
-            </ol>
+            </div>
         </div>
         <div class="bill">
-            total: <?= $totalprice?> Eur<br>
+          <?php if($totalprice < 30){
+                echo $totalprice="Total = ". $totalprice ."EUR <br>
+                <small>(buy for ".(30-$totalprice)."EUR more to have a 5% discount)</small>"; 
+            }
+            else{
+                echo $totalprice = "<p class='oldPrice'>Total = ".$totalprice."</p> You got a 5% discount ! <br> new total : ". ($totalprice-($totalprice*0.05))."EUR";
+            };
+            ?><br>
 
         </div>
     </div>

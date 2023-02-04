@@ -8,19 +8,70 @@
     margin: auto;
     margin-top: 2rem;
     .bill{
-        background-color: white;
+        background-color: black;
         width: 25%;
-        height: 25px;
-
+        height: 200px;
+        color: burlywood;
+        font-size: 150%;
+        font-weight: bold;
         border: solid 2px;
         border-radius: 25px;
-        padding: 1.5rem;
+        padding: 0.5rem;
         margin: auto;
         text-align: center;
+        small{
+            font-size: 60%;
+        }
+        .oldPrice{
+            color: lightcoral;
+            text-decoration: line-through;
+        }
     }
     .einkauf{
         width: 65%;
+        h5{
+            text-align: center;
+            border-bottom: solid 2px;
+            padding-bottom: 0.5rem;
+            font-size: 150%;
+        }
+        div{
+            width: 100%;        
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            div{
+                width: 230px;
+                display: flex;
+                justify-content: space-between;
+                gap: 2rem;
+                border: solid 2px;
+                border-collapse:collapse;
+                padding: 0.3rem;
+                background-color: burlywood;
+                font-weight: bold;
+                button{
+                    border: solid 2px black;
+                    border-radius: 100%;
+                    width: 25px;
+                    height: 25px;
+                    text-align: center;
+                    padding-right: 15px;
+                    font-weight: bold;
+                    font-size: 90%;
+                    background-color: lightcoral;
+                }
+                button:hover{
+                    background-color: black;
+                    color: lightcoral;
+                    box-shadow: lightcoral 0 0 10px 5px;
+                }
+                
+            }
+
+        }
     }
+   
 
 }
 #payment{
