@@ -11,8 +11,9 @@
         <a href=""><img src="https://cdn3.iconfinder.com/data/icons/social-media-2253/17/Vector-1-128.png" alt="instagram"></a>
     </div>
     <div class="copyright">© Noppe Boulangerie 2023</div>
-
-
-
-
+</div>
+<div>
+    <form id="deleteAccount" method="post">
+    <a href="../actions/deleteAccount.php?id=<?= $row['user_id']?>"><button type="button">Delete my profile ?</button></a>
+    </form>
 </div>

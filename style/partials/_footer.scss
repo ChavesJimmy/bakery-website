@@ -30,3 +30,30 @@
         
     }
 }
+#deleteAccount{
+    width: 17%;
+    display: block;
+    margin: auto;    
+    margin-top: 1rem;
+
+    a{
+        color: lightcoral;
+        text-decoration: none;
+        button{
+    font-weight: 800;
+    
+    color: lightcoral;
+    background-color: transparent;    
+    border: lightcoral solid;
+    border-radius: 0 25px 0 25px;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    border-left: none;
+    border-right: none;
+    
+}button:hover{
+        background-color: lightcoral;
+        color :black;
+        border: black solid;
+    }
+}}

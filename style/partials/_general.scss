@@ -55,5 +55,24 @@ body{
     width: 50%;
     border-radius: 25px;
     background-color: transparentize($color: black, $amount: 0.3);
+    button{
+        padding: 1rem;
+        border-radius: 15px;
+        margin-right: 1rem;
+        margin-left: 1rem;
+        font-weight: bold;
+        color: burlywood;
+        border: burlywood solid 2px ;
+        background-color: gray;
+    
+    }
+    .delete:hover{
+        background-color: lightcoral;
+        font-size: 50%;
+    }
+    .goBack:hover{
+        background-color: lightgreen;
+        font-size: 50%;
+    }
 
 }
