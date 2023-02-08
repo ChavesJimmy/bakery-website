@@ -76,3 +76,20 @@ body{
     }
 
 }
+#gotop{
+    width: 50px;
+    height: 50px;
+    font-size: 150%;
+    margin: auto;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: burlywood;
+    border-radius: 100%;
+    opacity: 60%;
+    z-index: 20;
+    border:solid black
+}
+#gotop:hover{
+    opacity: 100%;
+}

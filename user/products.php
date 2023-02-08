@@ -148,7 +148,7 @@ else{
  }
  //display divers
  $message="";
-$sqldivers="SELECT * FROM products WHERE category='divers'";
+$sqldivers="SELECT * FROM products WHERE category='other'";
 $resultdivers = mysqli_query($connect, $sqldivers);
 $tbodydivers = '';
 if (mysqli_num_rows($resultdivers)  > 0) {
@@ -174,7 +174,7 @@ if (mysqli_num_rows($resultdivers)  > 0) {
             
     </div>";}}
 else{
-    $tbodydivers="No Pikant available";
+    $tbodydivers="No Divers available";
  }
 ?>
 <!DOCTYPE html>
@@ -200,32 +200,39 @@ else{
         <a href="index.php">🏠 Startseite</a> > <a href="products.php">produkte</a>
     </div>
     <div id="container">        
-    <h3>Unser Brot</h3>
     <div id="brot">
+    <h3>Unser Brot</h3>
         <?= $tbodybrot?>
     </div>
-    <h3>Unser Viennoiserie</h3>
     <div id="viennoiserie">
+    <h3>Unser Viennoiserie</h3>
+
         <?= $tbodyvienn?>
     </div>
-    <h3>Unser Patisserie</h3>
+    
     <div id="patisserie">
+        <h3>Unser Patisserie</h3>
         <?= $tbodypatisserie?>
     </div>
-    <h3>Unser Geback</h3>
     <div id="geback">
+    <h3>Unser Geback</h3>
+
         <?= $tbodygeback?>
     </div>
-    <h3>Unser Pikant</h3>
     <div id="pikant">
+    <h3>Unser Pikant</h3>
+
         <?= $tbodypikant?>
     </div>
-    <h3>Unser Divers</h3>
     <div id="divers">
+    <h3>Unser Divers</h3>
+
         <?= $tbodydivers?>
     </div>
 </div>
     <?php require_once '../components/footer_user.php' ?>
-<form action="products.php" method="post"></form>
+    <a href="#"><button id="gotop">🔝</button></a>
+
+
 </body> 
 </html>

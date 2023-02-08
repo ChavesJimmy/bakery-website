@@ -45,15 +45,29 @@
 h3{
     text-align: center;
 }
-#brot,#viennoiserie{
+#brot,#viennoiserie,#patisserie, #geback, #divers, #pikant{
     display: flex;
     gap: 1rem;
+    margin-top: 1rem;
     flex-wrap: wrap;
+    border-bottom: solid;
+    padding-bottom: 1rem;
+    h3{
+        writing-mode: vertical-lr;
+        text-orientation: upright;
+        border: solid 3px;
+        border-radius: 0 25px 25px 0;
+        padding: 0.2rem;
+        background-color: black;
+        color: burlywood;
+        font-weight: bold;
+        margin-left: -0.3rem;
+    }
 .card{
     display: flex;
     flex-direction: column;
-    width:300px;
-    height: 500px;
+    width:280px;
+    height: 550px;
     text-align: center;
     color: black;
     font-weight: bolder;
@@ -69,36 +83,13 @@ h3{
         border-radius: 25px;
         border: solid 2px;
         transition: 2s;
-        height: 50%;
+        height: 40%;
     }
     p{
         padding: 0.5rem;
         text-align: center;
         
     }
-    /* a{
-        text-decoration: none;
-        border: 2px solid ;
-        background-color: black;
-        width: 20%;
-        height: 20px;
-        color: burlywood;
-        font-size: 50%;
-        margin: auto;
-        margin-bottom: 0.5rem;
-        border-radius: 25px;
-        transition: 1s;
-        }
-        a:hover{
-            background-color: burlywood;
-            color: black;
-            border: solid 2px;
-            box-shadow: 0 0 5px 2px;
-
-        } */
-
-    
-   
     
 }
 .card:hover{
@@ -162,6 +153,8 @@ h3{
       }
       form{
         border-top: solid;
+        position: absolute;
+        bottom: 0.5rem;
         display: flex;
         flex-direction: column;
         text-align: center; 
@@ -179,7 +172,7 @@ h3{
         button{
             display: block;
             margin: auto;
-        margin-top: 0.5rem;
+        margin-top: 1rem;
         width: 40%;
         padding: 0.5rem;
         border-radius: 25px;

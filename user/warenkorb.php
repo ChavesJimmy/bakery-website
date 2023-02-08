@@ -27,7 +27,10 @@ if($_SESSION['USER']){
             <button type='submit'>X</button></form></div>";
             $totalprice += $rowshop['price'];      
 
-}}}
+}}
+else{
+    $tshop="Shopping Cart Empty";
+}}
 
 ?>
 <!DOCTYPE html>

@@ -17,7 +17,7 @@
   <img src="https://cdn.pixabay.com/photo/2022/01/11/18/42/service-6931249__480.png" style="width:100%">
   <div class="text">Hiring ! <br>
     Waiter/Waitress Full/part-time.<br>
-    <a href="products.php">Karriere</a>
+    <a href="karriere.php">Karriere</a>
   </div>
 </div>
 

@@ -33,11 +33,21 @@ $tbodypatisserie = '';
 if (mysqli_num_rows($resultpatisserie)  > 0) {
     while($rowpatisserie = mysqli_fetch_array($resultpatisserie, MYSQLI_ASSOC)){
         $tbodypatisserie .="<div class='card'>
-        <img src='".$rowpatisserie['photo']."' alt='".$rowpatisserie['product_name']."'>   
-        <h4>".$rowpatisserie['product_name']."</h4>
-        <p class='price'>".$rowpatisserie['price']."EUR<br><a href='details.php?id=".$rowpatisserie['product_id']."'>details</a></p>
-            
-    </div>";}}
+    <img src='".$rowpatisserie['photo']."' alt='".$rowpatisserie['product_name']."'>   
+    <div class='details'>
+    <div class='front'>
+    <h4>".$rowpatisserie['product_name']."</h4>
+    <p>Hover to see details</p>
+    </div>
+    <div class='back'>
+    <h4>".$rowpatisserie['product_name']."</h4>
+    <p class='price'>".$rowpatisserie['price']."EUR<br></p>
+    ".$rowpatisserie['description']."<br>
+    <a href='login.php' class='LogInCard'>Log in to book your ".$rowpatisserie['product_name']." online</a>
+    </div>
+    </div>
+        
+</div>";}}
 else{
     $tbodypatisserie="No Patisserie available";
  }
@@ -48,11 +58,21 @@ $tbodygeback = '';
 if (mysqli_num_rows($resultgeback)  > 0) {
     while($rowgeback = mysqli_fetch_array($resultgeback, MYSQLI_ASSOC)){
         $tbodygeback .="<div class='card'>
-        <img src='".$rowgeback['photo']."' alt='".$rowgeback['product_name']."'>   
-        <h4>".$rowgeback['product_name']."</h4>
-        <p class='price'>".$rowgeback['price']."EUR<br><a href='details.php?id=".$rowgeback['product_id']."'>details</a></p>
-            
-    </div>";}}
+    <img src='".$rowgeback['photo']."' alt='".$rowgeback['product_name']."'>   
+    <div class='details'>
+    <div class='front'>
+    <h4>".$rowgeback['product_name']."</h4>
+    <p>Hover to see details</p>
+    </div>
+    <div class='back'>
+    <h4>".$rowgeback['product_name']."</h4>
+    <p class='price'>".$rowgeback['price']."EUR<br></p>
+    ".$rowgeback['description']."<br>
+    <a href='login.php' class='LogInCard'>Log in to book your ".$rowgeback['product_name']." online</a>
+    </div>
+    </div>
+        
+</div>";}}
 else{
     $tbodygeback="No Gebäck available";
  }
@@ -63,19 +83,21 @@ $tbodyvienn = '';
 if (mysqli_num_rows($resultvienn)  > 0) {
     while($rowvienn = mysqli_fetch_array($resultvienn, MYSQLI_ASSOC)){
         $tbodyvienn .="<div class='card'>
-        <img src='".$rowvienn['photo']."' alt='".$rowvienn['product_name']."'>   
-        <div class='details'>
-        <div class='front'>
-        <h4>".$rowvienn['product_name']."</h4>
-        <p class='price'>".$rowvienn['price']."EUR<br></p>
-        </div>
-        <div class='back'>
-        <h4>".$rowvienn['product_name']."</h4>
-        ".$rowvienn['description']."
-        </div>
-        </div>
-            
-    </div>";}}
+    <img src='".$rowvienn['photo']."' alt='".$rowvienn['product_name']."'>   
+    <div class='details'>
+    <div class='front'>
+    <h4>".$rowvienn['product_name']."</h4>
+    <p>Hover to see details</p>
+    </div>
+    <div class='back'>
+    <h4>".$rowvienn['product_name']."</h4>
+    <p class='price'>".$rowvienn['price']."EUR<br></p>
+    ".$rowvienn['description']."<br>
+    <a href='login.php' class='LogInCard'>Log in to book your ".$rowvienn['product_name']." online</a>
+    </div>
+    </div>
+        
+</div>";}}
 else{
     $tbodyvienn="No Viennoiserie available";
  }
@@ -86,26 +108,46 @@ $tbodypikant = '';
 if (mysqli_num_rows($resultpikant)  > 0) {
     while($rowpikant = mysqli_fetch_array($resultpikant, MYSQLI_ASSOC)){
         $tbodypikant .="<div class='card'>
-        <img src='".$rowpikant['photo']."' alt='".$rowpikant['product_name']."'>   
-        <h4>".$rowpikant['product_name']."</h4>
-        <p class='price'>".$rowpikant['price']."EUR<br><a href='details.php?id=".$rowpikant['product_id']."'>details</a></p>
-            
-    </div>";}}
+    <img src='".$rowpikant['photo']."' alt='".$rowpikant['product_name']."'>   
+    <div class='details'>
+    <div class='front'>
+    <h4>".$rowpikant['product_name']."</h4>
+    <p>Hover to see details</p>
+    </div>
+    <div class='back'>
+    <h4>".$rowpikant['product_name']."</h4>
+    <p class='price'>".$rowpikant['price']."EUR<br></p>
+    ".$rowpikant['description']."<br>
+    <a href='login.php' class='LogInCard'>Log in to book your ".$rowpikant['product_name']." online</a>
+    </div>
+    </div>
+        
+</div>";}}
 else{
     $tbodypikant="No Pikant available";
  }
  //display divers
-$sqldivers="SELECT * FROM products WHERE category='divers'";
+$sqldivers="SELECT * FROM products WHERE category='other'";
 $resultdivers = mysqli_query($connect, $sqldivers);
 $tbodydivers = '';
 if (mysqli_num_rows($resultdivers)  > 0) {
     while($rowdivers = mysqli_fetch_array($resultdivers, MYSQLI_ASSOC)){
         $tbodydivers .="<div class='card'>
-        <img src='".$rowdivers['photo']."' alt='".$rowdivers['product_name']."'>   
-        <h4>".$rowdivers['product_name']."</h4>
-        <p class='price'>".$rowdivers['price']."EUR<br><a href='details.php?id=".$rowdivers['product_id']."'>details</a></p>
-            
-    </div>";}}
+    <img src='".$rowdivers['photo']."' alt='".$rowdivers['product_name']."'>   
+    <div class='details'>
+    <div class='front'>
+    <h4>".$rowdivers['product_name']."</h4>
+    <p>Hover to see details</p>
+    </div>
+    <div class='back'>
+    <h4>".$rowdivers['product_name']."</h4>
+    <p class='price'>".$rowdivers['price']."EUR<br></p>
+    ".$rowdivers['description']."<br>
+    <a href='login.php' class='LogInCard'>Log in to book your ".$rowdivers['product_name']." online</a>
+    </div>
+    </div>
+        
+</div>";}}
 else{
     $tbodydivers="No Divers available";
  }
@@ -140,32 +182,39 @@ else{
     If you want to order online, register now ! <br> <br>> > > <a href="register.php">REGISTER</a>< < <
 </div>
 <div id="container">        
-    <h3>Unser Brot</h3>
+    
     <div id="brot">
+    <h3>Unser Brot</h3>
         <?= $tbodybrot?>
     </div>
-    <h3>Unser Viennoiserie</h3>
     <div id="viennoiserie">
+    <h3>Unser Viennoiserie</h3>
+
         <?= $tbodyvienn?>
     </div>
-    <h3>Unser Patisserie</h3>
+    
     <div id="patisserie">
+        <h3>Unser Patisserie</h3>
         <?= $tbodypatisserie?>
     </div>
-    <h3>Unser Geback</h3>
     <div id="geback">
+    <h3>Unser Geback</h3>
+
         <?= $tbodygeback?>
     </div>
-    <h3>Unser Pikant</h3>
     <div id="pikant">
+    <h3>Unser Pikant</h3>
+
         <?= $tbodypikant?>
     </div>
-    <h3>Unser Divers</h3>
     <div id="divers">
+    <h3>Unser Divers</h3>
+
         <?= $tbodydivers?>
     </div>
 </div>
     <?php require_once 'components/footer.php' ?>
+    <a href="#"><button id="gotop">🔝</button></a>
 
 </body> 
 </html>

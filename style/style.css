@@ -260,15 +260,35 @@
 
 /* Caption text */
 .text {
-  color: whitesmoke;
-  font-size: 350%;
-  text-shadow: palevioletred 2px 2px 5px;
-  padding: 8px 12px;
+  color: black;
+  font-size: 250%;
   position: absolute;
-  font-family: "Pacifico";
-  bottom: 8px;
-  width: 100%;
+  text-shadow: burlywood 0px 0px 4px;
+  background-color: rgba(255, 255, 255, 0.4);
+  padding: 8px 12px;
+  height: 40%;
+  position: absolute;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  bottom: 110px;
+  left: 5px;
+  width: 97%;
+  margin: auto;
   text-align: center;
+}
+.text a {
+  text-decoration: none;
+  border: solid 5px burlywood;
+  border-radius: 25px;
+  position: absolute;
+  left: 35%;
+  bottom: 5px;
+  width: 200px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 0.5rem;
+}
+.text a:hover {
+  text-shadow: white 0 0 5px;
 }
 
 /* Number text (1/3 etc) */
@@ -406,6 +426,25 @@ body {
   font-size: 50%;
 }
 
+#gotop {
+  width: 50px;
+  height: 50px;
+  font-size: 150%;
+  margin: auto;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: burlywood;
+  border-radius: 100%;
+  opacity: 60%;
+  z-index: 20;
+  border: solid black;
+}
+
+#gotop:hover {
+  opacity: 100%;
+}
+
 h1, h4 {
   text-align: center;
 }
@@ -510,16 +549,31 @@ h3 {
   text-align: center;
 }
 
-#brot, #viennoiserie {
+#brot, #viennoiserie, #patisserie, #geback, #divers, #pikant {
   display: flex;
   gap: 1rem;
+  margin-top: 1rem;
   flex-wrap: wrap;
+  border-bottom: solid;
+  padding-bottom: 1rem;
 }
-#brot .card, #viennoiserie .card {
+#brot h3, #viennoiserie h3, #patisserie h3, #geback h3, #divers h3, #pikant h3 {
+  -ms-writing-mode: tb-lr;
+      writing-mode: vertical-lr;
+  text-orientation: upright;
+  border: solid 3px;
+  border-radius: 0 25px 25px 0;
+  padding: 0.2rem;
+  background-color: black;
+  color: burlywood;
+  font-weight: bold;
+  margin-left: -0.3rem;
+}
+#brot .card, #viennoiserie .card, #patisserie .card, #geback .card, #divers .card, #pikant .card {
   display: flex;
   flex-direction: column;
-  width: 300px;
-  height: 500px;
+  width: 280px;
+  height: 550px;
   text-align: center;
   color: black;
   font-weight: bolder;
@@ -531,38 +585,18 @@ h3 {
   border-radius: 25px;
   padding: 0.5rem;
   transition: 1s;
-  /* a{
-      text-decoration: none;
-      border: 2px solid ;
-      background-color: black;
-      width: 20%;
-      height: 20px;
-      color: burlywood;
-      font-size: 50%;
-      margin: auto;
-      margin-bottom: 0.5rem;
-      border-radius: 25px;
-      transition: 1s;
-      }
-      a:hover{
-          background-color: burlywood;
-          color: black;
-          border: solid 2px;
-          box-shadow: 0 0 5px 2px;
-
-      } */
 }
-#brot .card img, #viennoiserie .card img {
+#brot .card img, #viennoiserie .card img, #patisserie .card img, #geback .card img, #divers .card img, #pikant .card img {
   border-radius: 25px;
   border: solid 2px;
   transition: 2s;
-  height: 50%;
+  height: 40%;
 }
-#brot .card p, #viennoiserie .card p {
+#brot .card p, #viennoiserie .card p, #patisserie .card p, #geback .card p, #divers .card p, #pikant .card p {
   padding: 0.5rem;
   text-align: center;
 }
-#brot .card:hover, #viennoiserie .card:hover {
+#brot .card:hover, #viennoiserie .card:hover, #patisserie .card:hover, #geback .card:hover, #divers .card:hover, #pikant .card:hover {
   box-shadow: black 0 0 10px 5px;
 }
 
@@ -625,6 +659,8 @@ h3 {
 }
 .back form {
   border-top: solid;
+  position: absolute;
+  bottom: 0.5rem;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -643,7 +679,7 @@ h3 {
 .back form button {
   display: block;
   margin: auto;
-  margin-top: 0.5rem;
+  margin-top: 1rem;
   width: 40%;
   padding: 0.5rem;
   border-radius: 25px;
@@ -689,6 +725,7 @@ h3 {
   display: flex;
   justify-content: space-between;
   padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.5);
   width: 80%;
   margin: auto;
   margin-top: 2rem;
@@ -729,7 +766,7 @@ h3 {
   flex-wrap: wrap;
 }
 #korb .einkauf div div {
-  width: 230px;
+  width: 250px;
   display: flex;
   justify-content: space-between;
   gap: 2rem;
@@ -761,6 +798,7 @@ h3 {
   border-radius: 25px;
   justify-content: space-between;
   padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.5);
   width: 80%;
   margin: auto;
   margin-top: 2rem;
