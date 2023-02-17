@@ -1,6 +1,39 @@
 <?php
 require_once "../components/db_connect.php";
-session_start()
+session_start();
+$sql_article = "SELECT * FROM article";
+$result_article = mysqli_query($connect,$sql_article);
+$article = "";
+if (mysqli_num_rows($result_article)  > 0) {   
+    while ($row = mysqli_fetch_array($result_article, MYSQLI_ASSOC)) {
+        if($row['image']){
+         $article .= "<tr class='text-center'>
+         <td><img class='img-thumbnail rounded-circle' src='../image_article/" . $row['image'] . "'></td>
+         <td>" . $row['title'] . "</td>
+         <td>" . $row['category'] . "</td>
+         <td>" . $row['publication_date'] ." </td>
+         <td class='tdText'>".$row['article_text']."</td>
+         <td class='tdDispl'>" . $row['displayed']."</td>
+         <td id='action_btns'><a href='update_article.php?id=" . $row['article_id'] . "'><button class=' btn-primary' type='button'>Edit</button></a>
+         <a href='delete_article.php?id='" . $row['article_id'] . "'><button class='btn-danger' type='button'>Delete</button></a>
+         <a href='sale_statistic.php?id=". $row['article_id']."'><button class='btn-warning' type='button'>Sales</button></a>
+         </td>
+      </tr>";}
+      else{
+        $article .= "<tr class='text-center'>
+         <td>No image</td>
+         <td>" . $row['title'] . "</td>
+         <td>" . $row['category'] . "</td>
+         <td>" . $row['publication_date'] ." </td>
+         <td class='tdText'>".$row['article_text']."</td>
+         <td class='tdDispl'>" . $row['displayed']."</td>
+         <td id='action_btns'><a href='update_article.php?id=" . $row['article_id'] . "'><button class=' btn-primary' type='button'>Edit</button></a>
+         <a href='delete_article.php?id='" . $row['article_id'] . "'><button class='btn-danger' type='button'>Delete</button></a>
+         <a href='sale_statistic.php?id=". $row['article_id']."'><button class='btn-warning' type='button'>Sales</button></a>
+         </td>
+      </tr>";
+      }
+    }}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +46,22 @@ session_start()
 </head>
 <body>
     <?php require_once '../components/navbar_admin.php' ?>
-    
+    <table class='table'>
+                    <thead>
+                        <tr>
+                            <th>Picture</th>
+                            <th>Title</th>
+                            <th>Category</th>
+                            <th>Published on</th>
+                            <th>Text</th>
+                            <th>Displayed ?</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?= $article ?>
+                    </tbody>
+                </table>
     <div id="addarticle">
         <h1>Add news/job offer</h1>
         <form action="../actions/a_article.php" method="post" enctype="multipart/form-data">

@@ -24,7 +24,7 @@ if (mysqli_num_rows($resultnews)  > 0) {
     while($rownews = mysqli_fetch_array($resultnews, MYSQLI_ASSOC)){
         if($rownews['image'] == true){
     $tbodynews .="<div class='article'>
-    <div class='img_article'><img src='./image_article/".$rownews['image']."'></div>
+    <div class='img_article'><img src='../image_article/".$rownews['image']."'></div>
     <div class='article_body'>
     <h5>".$rownews['title']."</h5>
     ".$rownews['article_text']."<br><br> <small>".$rownews['publication_date']."</small></div>

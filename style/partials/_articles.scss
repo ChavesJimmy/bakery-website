@@ -9,24 +9,24 @@
     background-color: transparentize($color: white, $amount: 0.3);
     margin-top: 2rem;       
     border: solid;
-    padding: 1rem;
     margin-top: 2rem;
     border-radius: 25px;
     height: 200px;
     .img_article{
-        width: 40%;
         margin: auto;
+        width: 30%;
         
         img{
             width: 100%;
-            height: 100px;
-            object-fit: cover;
+            max-height: 180px;
+            object-fit: contain;
         }
     }
     .article_body{
         width: 70%;
         text-align: center;
         border-left: solid;
+        padding: 2rem;
         small{
             float: right;
             display: block;
@@ -38,7 +38,7 @@
     background-color: transparentize($color: white, $amount: 0.3);
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 78%;
     margin: auto;
     margin-top: 2rem;       
     border: solid 3px;
@@ -52,4 +52,13 @@
       text-align: right;
     }
 }
+}
+table{
+    tbody{
+        tr{
+            .tdText{
+                width: 35%;
+            }
+        }
+    }
 }

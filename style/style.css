@@ -168,25 +168,25 @@
   background-color: rgba(255, 255, 255, 0.7);
   margin-top: 2rem;
   border: solid;
-  padding: 1rem;
   margin-top: 2rem;
   border-radius: 25px;
   height: 200px;
 }
 #articles .article .img_article {
-  width: 40%;
   margin: auto;
+  width: 30%;
 }
 #articles .article .img_article img {
   width: 100%;
-  height: 100px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  max-height: 180px;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 #articles .article .article_body {
   width: 70%;
   text-align: center;
   border-left: solid;
+  padding: 2rem;
 }
 #articles .article .article_body small {
   float: right;
@@ -197,7 +197,7 @@
   background-color: rgba(255, 255, 255, 0.7);
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 78%;
   margin: auto;
   margin-top: 2rem;
   border: solid 3px;
@@ -210,6 +210,10 @@
 }
 #articles .simplearticle small {
   text-align: right;
+}
+
+table tbody tr .tdText {
+  width: 35%;
 }
 
 /* Slideshow container */
@@ -732,26 +736,22 @@ h3 {
 }
 #korb .bill {
   background-color: black;
-  width: 25%;
-  height: 200px;
+  width: 15%;
+  height: 50px;
+  margin-top: 50%;
   color: burlywood;
   font-size: 150%;
   font-weight: bold;
   border: solid 2px;
   border-radius: 25px;
   padding: 0.5rem;
-  margin: auto;
   text-align: center;
 }
 #korb .bill small {
   font-size: 60%;
 }
-#korb .bill .oldPrice {
-  color: lightcoral;
-  text-decoration: line-through;
-}
 #korb .einkauf {
-  width: 65%;
+  width: 75%;
 }
 #korb .einkauf h5 {
   text-align: center;
@@ -766,10 +766,11 @@ h3 {
   flex-wrap: wrap;
 }
 #korb .einkauf div div {
-  width: 250px;
+  width: 270px;
   display: flex;
   justify-content: space-between;
   gap: 2rem;
+  margin: auto;
   border: solid 2px;
   border-collapse: collapse;
   padding: 0.3rem;
@@ -842,6 +843,8 @@ h3 {
 #addarticle textarea {
   height: 350px;
   border-radius: 25px;
+  padding: 1rem;
+  font-weight: bold;
 }
 #addarticle button {
   width: 25%;

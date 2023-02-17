@@ -16,10 +16,10 @@ if($_SESSION['USER']){
     $resultshop = mysqli_query($connect, $sqlshop);
     if (mysqli_num_rows($resultshop)  > 0) {
         while($rowshop = mysqli_fetch_array($resultshop, MYSQLI_ASSOC)){
-            $sqlcount="SELECT count(fk_product) as count FROM shopping_cart where fk_product={$rowshop['product_id']}";
+             $sqlcount="SELECT count(fk_product) as count FROM shopping_cart where fk_product={$rowshop['product_id']}";
             $resultcount = mysqli_query($connect, $sqlcount);
             $rowcount = mysqli_fetch_array($resultcount, MYSQLI_ASSOC);
-            
+             
             $tshop.="
             <div>".$rowshop['product_name']." / ".$rowshop['price']." EUR
             <form method='post' action='../actions/removeProduct.php'>
@@ -54,23 +54,15 @@ else{
                <?= $tshop?> 
             </div>
         </div>
-        <div class="bill">
-          <?php if($totalprice < 30){
-                echo $totalprice="Total = ". $totalprice ."EUR <br>
-                <small>(buy for ".(30-$totalprice)."EUR more to have a 5% discount)</small>"; 
-            }
-            else{
-                echo $totalprice = "<p class='oldPrice'>Total = ".$totalprice."</p> You got a 5% discount ! <br> new total : ". ($totalprice-($totalprice*0.05))."EUR";
-            };
-            ?><br>
-
+        <div class="bill">TOTAL : <br>
+          <?php echo $totalprice ?> Eur
         </div>
     </div>
     <div id="payment">
         <form action="../actions/confirm_order.php" method="post">
             <label for="">Name</label>
             <input type="hidden" name="name" value="<?= $row['user_name']?>"><?= $row['user_name']?><br><br>
-            <label for="Phone">Email</label>
+            <label for="email">Email</label>
             <input type="hidden" name="email" value="<?= $row['email']?>"><?= $row['email']?><br><br>
             <label for="pickup">Pickup date <br> (all commands must be made at least the day before the pick up) </label>
             <input type="date" name="pickup" id="datePickerId"><br><br>
