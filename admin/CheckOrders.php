@@ -1,7 +1,7 @@
 <?php
 require_once "../components/db_connect.php";
 session_start();
-$sql_order = "SELECT * , DATEDIFF(delivery_date, CURDATE()) AS diff FROM orders 
+$sql_order = "SELECT distinct buyer, delivery_date,total_price,pickup_time , DATEDIFF(delivery_date, CURDATE()) AS diff FROM orders 
 join products ON orders.fk_product=products.product_id
 order by CASE WHEN diff < 1 THEN 1 ELSE 0 END, diff desc";
 $result_order = mysqli_query($connect,$sql_order);
@@ -12,13 +12,11 @@ if (mysqli_num_rows($result_order)  > 0) {
          <td>" . $row['buyer'] . "</td>
          <td>" . $row['delivery_date'] . "</td>
          <td>" . $row['pickup_time'] ." </td>
-         <td>" . $row['product_name'] ." </td>
-         <td>" . $row['price'] ." Eur</td>
          <td>" . $row['total_price'] ." Eur</td>
 
          <td id='action_btns'>
-         <a href='update_order.php?id=" . $row['order_id'] . "'><button class=' btn-primary' type='button'>Edit</button></a>
-         <a href='delete_order.php?id='" . $row['order_id'] . "'><button class='btn-danger' type='button'>Delete</button></a>
+         <a href='detail_order.php?id=" . $row['total_price'] . "'><button class=' btn-primary' type='button'>Detail</button></a>
+         <a href='delete_order.php?id='" . $row['delivery_date'] . "'><button class='btn-danger' type='button'>Delete</button></a>
          </td>
       </tr>";}
       
@@ -38,12 +36,10 @@ if (mysqli_num_rows($result_order)  > 0) {
     <table class='table'>
                     <thead>
                         <tr>
-                            <th>Picture</th>
-                            <th>Title</th>
-                            <th>Category</th>
-                            <th>Published on</th>
-                            <th>Text</th>
-                            <th>Displayed ?</th>
+                            <th>Buyer</th>
+                            <th>Pick up date</th>
+                            <th>Pick up time</th>
+                            <th>Total price</th>
                             <th>Actions</th>
                         </tr>
                     </thead>

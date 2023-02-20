@@ -3,7 +3,7 @@ require_once "../components/db_connect.php";
 session_start();
 $tshop="";
 $totalprice = 0;
-
+$disabled="";
 if($_SESSION['USER']){
     $sql="SELECT * FROM user WHERE user_id={$_SESSION['USER']}";
      $result = mysqli_query($connect, $sql);
@@ -30,6 +30,7 @@ if($_SESSION['USER']){
 }}
 else{
     $tshop="Shopping Cart Empty";
+    $disabled="disabled";
 }}
 
 ?>
@@ -69,7 +70,7 @@ else{
             <label for="pichup">Pickup hour <br> (all commands must be made at least the day before the pick up) </label>
             <input type="time" name="pickup_time" id="time" min="06:00" max="16:00">
             <input type="hidden" name="total_price" value=<?= $totalprice?>>
-            <button type="submit">Book</button>
+            <button type="submit" <?= $disabled?>>Book</button>
         </form>
     </div>
    

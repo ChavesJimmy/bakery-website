@@ -29,7 +29,9 @@ if ($_POST) {
         You will receive an email with the details of your order soon.";
         header("refresh:3;url=../user/index_user.php");
     } else {
-        $message = "Error while confirming order, try again later : <br>" . $connect->error;
+        $messageinfo = "Error while confirming order, try again later : <br>" . $connect->error;
+        header("refresh:3;url=../user/index_user.php");
+
     }}
     mail(
         $to = $email,
@@ -42,6 +44,10 @@ if ($_POST) {
         Thank you for your order !
         Your Noppe Team."
     );
+}else{
+    $messageinfo="Add something in your shopping cart before confirming order.";
+    header("refresh:3;url=../user/index_user.php");
+
 }
 
 ?>
