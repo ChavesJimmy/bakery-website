@@ -1,0 +1,23 @@
+#detailOrder{
+    margin: auto;
+    display: block;
+    text-align: center;
+    margin-top: 5rem;
+    width: 50%;
+    border: solid 5px;
+    padding: 3rem;
+    font-weight: bolder;
+    line-height: 200%;
+    background-color: burlywood;
+    .bestellungZeit{
+        border: solid;
+        padding: 1rem;
+        background-color: whitesmoke;
+    }
+    .bestellungDetail{
+        border: solid;
+        margin-top: 2rem;
+        background-color: whitesmoke;
+        padding: 1rem;
+    }
+}

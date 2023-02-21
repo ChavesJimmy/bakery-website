@@ -6,7 +6,6 @@ body{
     font-weight: bold;
     margin-bottom: 1rem;
     button{
-        background-color: lightcoral;
         padding: 0.5rem;
         border-radius: 25px;
         font-weight: bold;
@@ -25,31 +24,64 @@ body{
         div{
         width: 500px;
         height: 150px;
-        border: solid 2px ;
+        border: solid 5px black ;
         border-radius: 25px;
         text-align: center;
         font-weight: bold;
         font-size: 200%;
         color: black;
-        box-shadow: burlywood 2px 2px 10px 5px;
-    
+        box-shadow:  2px 2px 10px 5px;
+            h3{
+                border-radius: 15px 15px 0 0;
+            }
         }
     }
+    .prod, .orders{
+        background-color: burlywood;
+        background-size: contain;
+
+    }
+    .article, .review{
+        background-color: black;
+        color: burlywood;
+        background-size: contain;
+
+    }
     .prod{
-        background-color: red;
+        background-image: url(https://cdn.pixabay.com/photo/2022/02/03/14/18/sweets-6990514__480.png);
+        background-size: contain;
+        h3{
+            background-color: white;
+            opacity: 70%;
+            margin-top: 0rem;
+        }
+    }
+    .prod:hover,.article:hover, .review:hover, .orders:hover{
+        transform: scale(1.05);
     }
     .article{
-        background-color: greenyellow;
+        background-image: url(https://cdn.pixabay.com/photo/2017/11/10/04/47/write-2935375__480.png);
+        h3{
+            background-color: black;
+            opacity: 80%;
+            margin-top: 0rem;
+        }
     }
     .review{
-        background-color: lightseagreen;
-    }
-    .job{
-        background-color: yellow;
+        background-image: url(https://cdn.pixabay.com/photo/2022/06/09/12/17/customer-7252439__480.jpg);
+        h3{
+            background-color: black;
+            opacity: 70%;
+            margin-top: 0rem;
+        }
     }
     .orders{
-        background-color: lightpink;
+        background-image: url(https://cdn.pixabay.com/photo/2015/12/23/01/14/edit-1105049__480.png);
+        h3{
+            background-color: white;
+            opacity: 70%;
+            margin-top: 0rem;
+        }
     }
-
 }
 }

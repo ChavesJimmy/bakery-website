@@ -23,7 +23,7 @@ $tbody="";
     <?php require_once '../components/navbar_admin.php' ?>
     <div id="actions">
         <a href="products_list.php"><div class="prod"><h3>Add Product</h3></div></a>
-        <a href="addarticle.php"><div class="article"><h3>Add Article</h3></div></a>
+        <a href="addarticle.php"><div class="article"><h3>Add News/Jobs</h3></div></a>
         <a href="AnswerReview.php"><div class="review"><h3>Answer review</h3></div></a>
         <a href="CheckOrders.php"><div class="orders"><h3>See orders</h3></div></a>
     </div>

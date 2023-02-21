@@ -247,7 +247,6 @@ table tbody tr .tdText {
   border-radius: 0 3px 3px 0;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
 }
 
@@ -322,19 +321,8 @@ table tbody tr .tdText {
 
 /* Fading animation */
 .fade {
-  -webkit-animation-name: fade;
-          animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-          animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-  from {
-    opacity: 0.4;
-  }
-  to {
-    opacity: 1;
-  }
+  animation-name: fade;
+  animation-duration: 1.5s;
 }
 
 @keyframes fade {
@@ -507,7 +495,6 @@ h1, h4 {
 #menu {
   border-bottom: solid 3px;
   display: flex;
-  position: -webkit-sticky;
   position: sticky;
   top: 0;
   justify-content: space-around;
@@ -562,8 +549,7 @@ h3 {
   padding-bottom: 1rem;
 }
 #brot h3, #viennoiserie h3, #patisserie h3, #geback h3, #divers h3, #pikant h3 {
-  -ms-writing-mode: tb-lr;
-      writing-mode: vertical-lr;
+  writing-mode: vertical-lr;
   text-orientation: upright;
   border: solid 3px;
   border-radius: 0 25px 25px 0;
@@ -875,7 +861,6 @@ body .welcome {
   margin-bottom: 1rem;
 }
 body .welcome button {
-  background-color: lightcoral;
   padding: 0.5rem;
   border-radius: 25px;
   font-weight: bold;
@@ -894,28 +879,61 @@ body #actions a {
 body #actions a div {
   width: 500px;
   height: 150px;
-  border: solid 2px;
+  border: solid 5px black;
   border-radius: 25px;
   text-align: center;
   font-weight: bold;
   font-size: 200%;
   color: black;
-  box-shadow: burlywood 2px 2px 10px 5px;
+  box-shadow: 2px 2px 10px 5px;
+}
+body #actions a div h3 {
+  border-radius: 15px 15px 0 0;
+}
+body #actions .prod, body #actions .orders {
+  background-color: burlywood;
+  background-size: contain;
+}
+body #actions .article, body #actions .review {
+  background-color: black;
+  color: burlywood;
+  background-size: contain;
 }
 body #actions .prod {
-  background-color: red;
+  background-image: url(https://cdn.pixabay.com/photo/2022/02/03/14/18/sweets-6990514__480.png);
+  background-size: contain;
+}
+body #actions .prod h3 {
+  background-color: white;
+  opacity: 70%;
+  margin-top: 0rem;
+}
+body #actions .prod:hover, body #actions .article:hover, body #actions .review:hover, body #actions .orders:hover {
+  transform: scale(1.05);
 }
 body #actions .article {
-  background-color: greenyellow;
+  background-image: url(https://cdn.pixabay.com/photo/2017/11/10/04/47/write-2935375__480.png);
+}
+body #actions .article h3 {
+  background-color: black;
+  opacity: 80%;
+  margin-top: 0rem;
 }
 body #actions .review {
-  background-color: lightseagreen;
+  background-image: url(https://cdn.pixabay.com/photo/2022/06/09/12/17/customer-7252439__480.jpg);
 }
-body #actions .job {
-  background-color: yellow;
+body #actions .review h3 {
+  background-color: black;
+  opacity: 70%;
+  margin-top: 0rem;
 }
 body #actions .orders {
-  background-color: lightpink;
+  background-image: url(https://cdn.pixabay.com/photo/2015/12/23/01/14/edit-1105049__480.png);
+}
+body #actions .orders h3 {
+  background-color: white;
+  opacity: 70%;
+  margin-top: 0rem;
 }
 
 .newspaper, .clients {
@@ -974,6 +992,7 @@ table {
   display: block;
   margin: auto;
   text-align: center;
+  width: 100%;
 }
 table th {
   background-color: burlywood;
@@ -1079,4 +1098,28 @@ table .btn-warning {
 
 #backhome:hover {
   transform: scale(1.5);
+}
+
+#detailOrder {
+  margin: auto;
+  display: block;
+  text-align: center;
+  margin-top: 5rem;
+  width: 50%;
+  border: solid 5px;
+  padding: 3rem;
+  font-weight: bolder;
+  line-height: 200%;
+  background-color: burlywood;
+}
+#detailOrder .bestellungZeit {
+  border: solid;
+  padding: 1rem;
+  background-color: whitesmoke;
+}
+#detailOrder .bestellungDetail {
+  border: solid;
+  margin-top: 2rem;
+  background-color: whitesmoke;
+  padding: 1rem;
 }/*# sourceMappingURL=style.css.map */

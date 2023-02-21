@@ -15,11 +15,14 @@ if (mysqli_num_rows($result_order)  > 0) {
          <td>" . $row['total_price'] ." Eur</td>
 
          <td id='action_btns'>
-         <a href='detail_order.php?id=" . $row['total_price'] . "'><button class=' btn-primary' type='button'>Detail</button></a>
+         <a href='detail_order.php?id=" . $row['buyer'] . "'><button class=' btn-primary' type='button'>Detail</button></a>
          <a href='delete_order.php?id='" . $row['delivery_date'] . "'><button class='btn-danger' type='button'>Delete</button></a>
          </td>
       </tr>";}
       
+    }
+    else{
+        $order = "NO ORDERS";
     }
 ?>
 <!DOCTYPE html>
@@ -28,12 +31,12 @@ if (mysqli_num_rows($result_order)  > 0) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Articles</title>
+    <title>Check orders</title>
     <link rel="stylesheet" href="../style/style.css">
 </head>
 <body>
     <?php require_once '../components/navbar_admin.php' ?>
-    <table class='table'>
+    <table class='table' style="width:100%">
                     <thead>
                         <tr>
                             <th>Buyer</th>

@@ -11,11 +11,12 @@ if(isset($_SESSION['ADMIN'])){
     <div id="links">
         <div id="flexlinks">
         <div class="links left">
-            <a href="addarticle.php">Article</a>
-            <a href="products_list.php">Produkte</a>
-            <a href="addprodukte.php">Carousel</a>
-            <a href="addjobs.php">Karriere</a>
-            <a href="showorders.php">Orders</a>
+            <a href="addarticle.php">News/Jobs</a>
+            <a href="products_list.php">Produkte</a></div>
+
+            <div class="links right">
+            <a href="AnswerReview.php">Reviews</a>
+            <a href="CheckOrders.php">Orders</a>
         </div>
                     
         </div>
@@ -29,4 +30,3 @@ if(isset($_SESSION['ADMIN'])){
 <div id="title">NOPPE BÄCKEREI</div>
 <div class="welcome">Welcome <?= $tbody?>     <a href="../logout.php?logout"><button>log out</button></a>
 </div>  
-
